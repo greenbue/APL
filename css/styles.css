@@ -1,0 +1,22 @@
+.content {
+  margin-top: 60px;
+  border-bottom: solid 5px black;
+}
+
+#courses_title {
+  display: block;
+  padding: 12px 4px 12px 16px;
+}
+
+.title_box {
+  background: #f6f7f9;
+  border-bottom: 1px solid #d3d6db;
+  border-radius: 2px 2px 0 0;
+  min-height: 66px;
+}
+
+.box {
+  border: 1px solid #d3d6db;
+  border-radius: 2px 2px 0 0;
+  margin-bottom: 15px;
+}

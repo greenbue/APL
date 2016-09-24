@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/3dc14e6085.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+    <script src="js/tab.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            Advanced Personalised Learning (APL)
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a id="home_tab" href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-6 col-md-6" id="user">
+          <h1>
+            User Profile
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </h1>
+          <img src="images/user.png" class="img-responsive img-thumbnail img-rounded">
+          <p>Welcome Back John Doe!</p>
+        </div>
+        <div class="col-sm-6 col-md-6" id="user-results">
+          <h1>
+            Achievements
+            <i class="fa fa-line-chart" aria-hidden="true"></i>
+          </h1>
+          <ul>
+            <li>
+              Completed the "Basic Algebra Course"!
+            </li>
+            <li>
+              Earned a badge for studying 2 days in a row!
+            </li>
+            <li>
+              Earned a badge for completing 5 courses!
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row courses">
+        <div class="col-md-12 title_box">
+          <h2>COURSES</h2>
+        </div>
+        <div class="col-sm-3 col-md-3 box" id="courses_title">
+          <p>
+            <a class="btn btn-primary" id="active_tab" href="#active">
+              Active
+              <i class="fa fa-book" aria-hidden="true"></i>
+            </a>
+          </p>
+          <p>
+            <a class="btn btn-info" id="recommended_tab" href="#recommended">
+              Recommended
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            </a>
+          </p>
+          <p>
+            <a class="btn btn-success" id="completed_tab" href="#completed">
+              Completed
+              <i class="fa fa-certificate" aria-hidden="true"></i>
+            </a>
+          </p>
+        </div>
+        <div class="col-sm-9 col-md-9 box" id="courses_content">
+          <div class="tab-content">
+            <div id="active" class="tab-pane fade in active">
+              <strong><u>ACTIVE Courses</u></strong>
+            </div>
+            <div id="recommended" class="tab-pane fade in">
+              <strong><u>RECOMMENDED Courses</u></strong>
+            </div>
+            <div id="completed" class="tab-pane fade in">
+              <strong><u>COMPLETED Courses</u></strong>
+              <ul>
+                <li>
+                  Algebra 101
+                </li>
+                <li>
+                  Algebra 102
+                </li>
+                <li>
+                  Advance Algebra: Part 1
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
