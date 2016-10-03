@@ -18,5 +18,5 @@ I will merge it when it looks to be working as intended.
 
 It is marked with...
 
-<!-- START COPY THIS -->
-<!-- END COPY THIS -->
+<-- START COPY THIS -->
+<-- END COPY THIS -->
