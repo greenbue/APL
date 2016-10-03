@@ -10,3 +10,11 @@ Don't directly push onto the master branch.
 Branch, Modify, Pull Request.
 
 I will merge it when it looks to be working as intended.
+
+
+### Copy everything that is marked to be copied.
+
+It is marked with...
+
+<!-- START COPY THIS -->
+<!-- END COPY THIS -->
