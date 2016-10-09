@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".courses a").click(function(){
+    $(".courses a.btn").click(function(){
       $(this).tab('show');
       console.log("Hello");
     });
