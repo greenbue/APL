@@ -128,10 +128,12 @@
           </div>
           <div id="completed" class="tab-pane fade in">
             <strong><u>COMPLETED Courses</u></strong>
-            <div id="tab_1"><table class="table muffin table-bordered table-hover margin-bottom0">
+
+
+            <div id="tab_1"><table class="table muffin table-bordered table-hover margin-bottom0" style="border-collapse:collapse;">
               <thead>
                 <tr>
-                  <th><a href="javascript:table_sort('tab_1',0)">CourseID</a></th>
+                  <th><a href="javascript:table_sort('tab_1',0)">Course</a></th>
                   <th><a href="javascript:table_sort('tab_1',1)">Date Started</a></th>
                   <th><a href="javascript:table_sort('tab_1',2)">Date Completed</a></th>
                   <th><a href="javascript:table_sort('tab_1',3)">Achievements Earned</a></th>
@@ -139,7 +141,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr data-toggle="collapse" data-target="#Stats1">
                   <td>MATH 141</td>
                   <td>13/07/2015</td>
                   <td>22/10/2015</td>
@@ -151,6 +153,15 @@
                   </td>
                   </tr>
                   <tr>
+                      <td colspan="6" class="hiddenRow">
+                          <div id="Stats1" class="collapse">
+                            <div id="text" >
+                              Display some statistics here maybe some visualisations
+                            </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr data-toggle="collapse" data-target="#Stats2">
                     <td>MATH 151</td>
                     <td>24/10/2015</td>
                     <td>2/11/2015</td>
@@ -162,6 +173,15 @@
                   </td>
                 </tr>
                 <tr>
+                    <td colspan="6" class="hiddenRow">
+                        <div id="Stats2" class="collapse">
+                          <div id="text" >
+                            Display some statistics here maybe some visualisations
+                          </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr data-toggle="collapse" data-target="#Stats3">
                   <td>MATH 161</td>
                   <td>2/3/2016</td>
                   <td>25/3/2016</td>
@@ -171,6 +191,15 @@
                       50%
                     </div>
                   </td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="hiddenRow">
+                        <div id="Stats3" class="collapse">
+                          <div id="text" >
+                            Display some statistics here maybe some visualisations
+                          </div>
+                        </div>
+                    </td>
                 </tr>
               </tbody>
             </table>

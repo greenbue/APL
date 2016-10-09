@@ -29,6 +29,22 @@
 .progressrow #progressbar {
     padding: 10px;
 }
+/**************************************/
+
+
+
+/*** Completed Courses  ***/
+.hiddenRow {
+  padding: 0 !important;
+}
+
+.hiddenRow #text{
+  padding: 10px;
+}
+
+/**************************************/
+
+
 
 /*** Accordion drop down arrow ***/
 .collapse {
