@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
     <script src="js/tab.js"></script>
+    <script src="js/accordions.js"></script>
+
   </head><!-- END COPY THIS -->
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top"><!-- START COPY THIS -->
@@ -91,6 +93,24 @@
           <div class="tab-content">
             <div id="active" class="tab-pane fade in active">
               <strong><u>ACTIVE Courses</u></strong>
+              <div class="panel-group" id="accordion">
+              <div class="panel panel-default"> <!--Starts here for an accordion-->
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                      <span class="glyphicon glyphicon-minus"></span>
+                      COMP 425 - Computational Logic
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    This course is concerned with the application of formal logic to problems in Computer Science, and with techniques for mechanising logical reasoning. Topics may include: systems of reasoning; logic programming; the application of temporal and modal logics; and the relationship between proofs, programs, specifications and types. Students are recommended to take MATH 309 or PHIL 211/334/335.
+                  </div>
+                </div>
+              </div> <!-- COMP 425 Panel -->
+            </div>
+
             </div>
             <div id="recommended" class="tab-pane fade in">
               <strong><u>RECOMMENDED Courses</u></strong>
