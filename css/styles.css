@@ -21,6 +21,15 @@
   margin-bottom: 15px;
 }
 
+/*** Progress on active courses ***/
+.progressrow {
+      margin-top: 10px;
+}
+
+.progressrow #progressbar {
+    padding: 10px;
+}
+
 /*** Accordion drop down arrow ***/
 .collapse {
   position:relative;
