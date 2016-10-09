@@ -1,99 +1,99 @@
 <html>
-  <head><!-- START COPY THIS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://use.fontawesome.com/3dc14e6085.js"></script>
+<head><!-- START COPY THIS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/3dc14e6085.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
-    <script src="js/tab.js"></script>
-    <script src="js/accordions.js"></script>
+  <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+  <script src="js/tab.js"></script>
+  <script src="js/accordions.js"></script>
 
-  </head><!-- END COPY THIS -->
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top"><!-- START COPY THIS -->
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">
-            Advanced Personalised Learning (APL)
-          </a>
-        </div>
-
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a id="home_tab" href="index.html">Home</a></li>
-          </ul>
-        </div>
-      </div>
-    </div><!-- END COPY THIS -->
-
+</head><!-- END COPY THIS -->
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top"><!-- START COPY THIS -->
     <div class="container-fluid">
-      <div class="row content">
-        <div class="col-sm-6 col-md-6" id="user">
-          <h1>
-            User Profile
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </h1>
-          <img src="images/user.png" class="img-responsive img-thumbnail img-rounded">
-          <p>Welcome Back John Doe!</p>
-        </div>
-        <div class="col-sm-6 col-md-6" id="user-results">
-          <h1>
-            Achievements
-            <i class="fa fa-line-chart" aria-hidden="true"></i>
-          </h1>
-          <ul>
-            <li>
-              Completed the "Basic Algebra Course"!
-            </li>
-            <li>
-              Earned a badge for studying 2 days in a row!
-            </li>
-            <li>
-              Earned a badge for completing 5 courses!
-            </li>
-          </ul>
-        </div>
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Advanced Personalised Learning (APL)
+        </a>
       </div>
-      <div class="row courses">
-        <div class="col-md-12 title_box">
-          <h2>COURSES</h2>
-        </div>
-        <div class="col-sm-3 col-md-3 box" id="courses_title">
-          <p>
-            <a class="btn btn-primary" id="active_tab" href="#active">
-              Active
-              <i class="fa fa-book" aria-hidden="true"></i>
-            </a>
-          </p>
-          <p>
-            <a class="btn btn-info" id="recommended_tab" href="#recommended">
-              Recommended
-              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-            </a>
-          </p>
-          <p>
-            <a class="btn btn-success" id="completed_tab" href="#completed">
-              Completed
-              <i class="fa fa-certificate" aria-hidden="true"></i>
-            </a>
-          </p>
-        </div>
-        <div class="col-sm-9 col-md-9 box" id="courses_content">
-          <div class="tab-content">
-            <div id="active" class="tab-pane fade in active">
-              <strong><u>ACTIVE Courses</u></strong>
-              <div class="panel-group" id="accordion">
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="active"><a id="home_tab" href="index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- END COPY THIS -->
+
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-6 col-md-6" id="user">
+        <h1>
+          User Profile
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </h1>
+        <img src="images/user.png" class="img-responsive img-thumbnail img-rounded">
+        <p>Welcome Back John Doe!</p>
+      </div>
+      <div class="col-sm-6 col-md-6" id="user-results">
+        <h1>
+          Achievements
+          <i class="fa fa-line-chart" aria-hidden="true"></i>
+        </h1>
+        <ul>
+          <li>
+            Completed the "Basic Algebra Course"!
+          </li>
+          <li>
+            Earned a badge for studying 2 days in a row!
+          </li>
+          <li>
+            Earned a badge for completing 5 courses!
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row courses">
+      <div class="col-md-12 title_box">
+        <h2>COURSES</h2>
+      </div>
+      <div class="col-sm-3 col-md-3 box" id="courses_title">
+        <p>
+          <a class="btn btn-primary" id="active_tab" href="#active">
+            Active
+            <i class="fa fa-book" aria-hidden="true"></i>
+          </a>
+        </p>
+        <p>
+          <a class="btn btn-info" id="recommended_tab" href="#recommended">
+            Recommended
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          </a>
+        </p>
+        <p>
+          <a class="btn btn-success" id="completed_tab" href="#completed">
+            Completed
+            <i class="fa fa-certificate" aria-hidden="true"></i>
+          </a>
+        </p>
+      </div>
+      <div class="col-sm-9 col-md-9 box" id="courses_content">
+        <div class="tab-content">
+          <div id="active" class="tab-pane fade in active">
+            <strong><u>ACTIVE Courses</u></strong>
+            <div class="panel-group" id="accordion">
               <div class="panel panel-default"> <!--Starts here for an accordion-->
                 <div class="panel-heading">
                   <h4 class="panel-title">
@@ -122,27 +122,63 @@
               </div> <!-- COMP 425 Panel -->
             </div>
 
-            </div>
-            <div id="recommended" class="tab-pane fade in">
-              <strong><u>RECOMMENDED Courses</u></strong>
-            </div>
-            <div id="completed" class="tab-pane fade in">
-              <strong><u>COMPLETED Courses</u></strong>
-              <ul>
-                <li>
-                  Algebra 101
-                </li>
-                <li>
-                  Algebra 102
-                </li>
-                <li>
-                  Advance Algebra: Part 1
-                </li>
-              </ul>
-            </div>
+          </div>
+          <div id="recommended" class="tab-pane fade in">
+            <strong><u>RECOMMENDED Courses</u></strong>
+          </div>
+          <div id="completed" class="tab-pane fade in">
+            <strong><u>COMPLETED Courses</u></strong>
+            <div id="tab_1"><table class="table muffin table-bordered table-hover margin-bottom0">
+              <thead>
+                <tr>
+                  <th><a href="javascript:table_sort('tab_1',0)">CourseID</a></th>
+                  <th><a href="javascript:table_sort('tab_1',1)">Date Started</a></th>
+                  <th><a href="javascript:table_sort('tab_1',2)">Date Completed</a></th>
+                  <th><a href="javascript:table_sort('tab_1',3)">Achievements Earned</a></th>
+                  <th><a href="javascript:table_sort('tab_1',4)">Performance</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>MATH 141</td>
+                  <td>13/07/2015</td>
+                  <td>22/10/2015</td>
+                  <td>3/10</td>
+                  <td>
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                      30%
+                    </div>
+                  </td>
+                  </tr>
+                  <tr>
+                    <td>MATH 151</td>
+                    <td>24/10/2015</td>
+                    <td>2/11/2015</td>
+                    <td>8/8</td>
+                    <td>
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                      100%
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MATH 161</td>
+                  <td>2/3/2016</td>
+                  <td>25/3/2016</td>
+                  <td>6/12</td>
+                  <td>
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                      50%
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</div>
+</body>
 </html>
