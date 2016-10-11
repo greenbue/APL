@@ -36,9 +36,8 @@
       </div>
     </div>
   </div><!-- END COPY THIS -->
-
-  <div class="container-fluid">
-    <div class="row content">
+  <div class="container-fluid"><!-- container fluid Div -->
+    <div class="row content"><!-- row content Div -->
       <div class="col-sm-6 col-md-6" id="user">
         <h1>
           User Profile
@@ -64,12 +63,12 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="row courses">
+    </div><!-- End of row content Div -->
+    <div class="row courses"><!-- courses Div -->
       <div class="col-md-12 title_box">
         <h2>COURSES</h2>
       </div>
-      <div class="col-sm-3 col-md-3 box" id="courses_title">
+      <div class="col-sm-3 col-md-3 box" id="courses_title"><!-- courses_title Div -->
         <p>
           <a class="btn btn-primary" id="active_tab" href="#active">
             Active
@@ -88,9 +87,9 @@
             <i class="fa fa-certificate" aria-hidden="true"></i>
           </a>
         </p>
-      </div>
-      <div class="col-sm-9 col-md-9 box" id="courses_content">
-        <div class="tab-content">
+      </div><!-- End of courses_title Div -->
+      <div class="col-sm-9 col-md-9 box" id="courses_content"><!-- courses_content Div -->
+        <div class="tab-content"><!-- Tab Content Div -->
           <div id="active" class="tab-pane fade in active">
             <strong><u>ACTIVE Courses</u></strong>
             <div class="panel-group" id="accordion">
@@ -121,47 +120,44 @@
                 </div>
               </div> <!-- COMP 425 Panel -->
             </div>
-
           </div>
           <div id="recommended" class="tab-pane fade in">
             <strong><u>RECOMMENDED Courses</u></strong>
           </div>
           <div id="completed" class="tab-pane fade in">
             <strong><u>COMPLETED Courses</u></strong>
-
-
-            <div id="tab_1"><table class="table muffin table-bordered table-hover margin-bottom0" style="border-collapse:collapse;">
-              <thead>
-                <tr>
-                  <th><a href="javascript:table_sort('tab_1',0)">Course</a></th>
-                  <th><a href="javascript:table_sort('tab_1',1)">Date Started</a></th>
-                  <th><a href="javascript:table_sort('tab_1',2)">Date Completed</a></th>
-                  <th><a href="javascript:table_sort('tab_1',3)">Achievements Earned</a></th>
-                  <th><a href="javascript:table_sort('tab_1',4)">Performance</a></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-toggle="collapse" data-target="#Stats1">
-                  <td>MATH 141</td>
-                  <td>13/07/2015</td>
-                  <td>22/10/2015</td>
-                  <td>3/10</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">
-                        30%
+              <div id="tab_1"><table class="table muffin table-bordered table-hover margin-bottom0" style="border-collapse:collapse;">
+                <thead>
+                  <tr>
+                    <th><a href="javascript:table_sort('tab_1',0)">Course</a></th>
+                    <th><a href="javascript:table_sort('tab_1',1)">Date Started</a></th>
+                    <th><a href="javascript:table_sort('tab_1',2)">Date Completed</a></th>
+                    <th><a href="javascript:table_sort('tab_1',3)">Achievements Earned</a></th>
+                    <th><a href="javascript:table_sort('tab_1',4)">Performance</a></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-toggle="collapse" data-target="#Stats1">
+                    <td>MATH 141</td>
+                    <td>13/07/2015</td>
+                    <td>22/10/2015</td>
+                    <td>3/10</td>
+                    <td>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                          30%
+                        </div>
                       </div>
-                    </div>
-                  </td>
+                    </td>
                   </tr>
                   <tr>
-                      <td colspan="6" class="hiddenRow">
-                          <div id="Stats1" class="collapse">
-                            <div id="text" >
-                              Display some statistics here maybe some visualisations
-                            </div>
-                          </div>
-                      </td>
+                    <td colspan="6" class="hiddenRow">
+                      <div id="Stats1" class="collapse">
+                        <div id="text" >
+                          Display some statistics here maybe some visualisations
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr data-toggle="collapse" data-target="#Stats2">
                     <td>MATH 151</td>
@@ -174,31 +170,31 @@
                           100%
                         </div>
                       </div>
-                  </td>
-                </tr>
-                <tr>
-                    <td colspan="6" class="hiddenRow">
-                        <div id="Stats2" class="collapse">
-                          <div id="text" >
-                            Display some statistics here maybe some visualisations
-                          </div>
-                        </div>
                     </td>
-                </tr>
-                <tr data-toggle="collapse" data-target="#Stats3">
-                  <td>MATH 161</td>
-                  <td>2/3/2016</td>
-                  <td>25/3/2016</td>
-                  <td>6/12</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                        50%
+                  </tr>
+                  <tr>
+                    <td colspan="6" class="hiddenRow">
+                      <div id="Stats2" class="collapse">
+                        <div id="text" >
+                          Display some statistics here maybe some visualisations
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
+                    </td>
+                  </tr>
+                  <tr data-toggle="collapse" data-target="#Stats3">
+                    <td>MATH 161</td>
+                    <td>2/3/2016</td>
+                    <td>25/3/2016</td>
+                    <td>6/12</td>
+                    <td>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                          50%
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
                     <td colspan="6" class="hiddenRow">
                         <div id="Stats3" class="collapse">
                           <div id="text" >
@@ -206,14 +202,14 @@
                           </div>
                         </div>
                     </td>
-                </tr>
-              </tbody>
-            </table>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div><!-- End Content Div -->
+      </div><!-- End of courses_content Div -->
+    </div><!-- courses -->
+  </div><!-- End of container fluid Div -->
 </body>
 </html>
