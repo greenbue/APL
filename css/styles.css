@@ -20,3 +20,67 @@
   border-radius: 2px 2px 0 0;
   margin-bottom: 15px;
 }
+
+/*** Progress on active courses ***/
+.progressrow {
+      margin-top: 10px;
+}
+
+.progressrow #progressbar {
+    padding: 10px;
+}
+/**************************************/
+
+
+
+/*** Completed Courses  ***/
+.hiddenRow {
+  padding: 0 !important;
+}
+
+.hiddenRow #text{
+  padding: 10px;
+}
+
+/**************************************/
+
+
+
+/*** Accordion drop down arrow ***/
+.collapse {
+  position:relative;
+  height:0;
+  overflow:hidden;
+  -webkit-transition:height 0.35s ease;
+  -moz-transition:height 0.35s ease;
+  -o-transition:height 0.35s ease;
+  transition:height 0.35s ease;
+}
+.collapse.in {
+  height:auto;
+}
+
+.panel-heading [data-toggle="collapse"]:after
+{
+	font-family: 'Glyphicons Halflings';
+	content: "\e072";
+	float: right;
+	color: #b0c5d8;
+	font-size: 18px;
+	line-height: 22px;
+
+	-webkit-transform: rotate(-90deg);
+	-moz-transform:    rotate(-90deg);
+	-ms-transform:     rotate(-90deg);
+	-o-transform:      rotate(-90deg);
+	transform:         rotate(-90deg);
+}
+.panel-heading [data-toggle="collapse"].collapsed:after
+{
+	-webkit-transform: rotate(90deg);
+	-moz-transform:    rotate(90deg);
+	-ms-transform:     rotate(90deg);
+	-o-transform:      rotate(90deg);
+	transform:         rotate(90deg);
+}
+/**************************************/
