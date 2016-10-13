@@ -20,3 +20,16 @@ It is marked with...
 
 <-- START COPY THIS -->
 <-- END COPY THIS -->
+
+
+### Addressing Issues
+
+Follow this convention...
+
+4-fake-login-page
+
+Use dashes not underscore for branch names.
+
+Add the number before the branch name. This allows us to use the term "Resolves #number_of_branch"
+
+This is used for tracking the changes that were made and referencing other branches.
