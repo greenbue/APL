@@ -2,7 +2,7 @@
 <head><!-- START Header -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://use.fontawesome.com/3dc14e6085.js"></script>
-  <meta charset="UTF-8"> 
+  <meta charset="UTF-8">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Optional theme -->
@@ -15,6 +15,7 @@
   <script src="js/accordions.js"></script>
   <script src="js/lecture.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/lecture_data.js"></script>
 
 </head><!-- END Header -->
 <body onload="setTitle()">
@@ -34,42 +35,58 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
           <li class="active"><a id="home_tab" href="index.html">Home</a></li>
-          
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a id="login_tab" href="login.html">Login</a></li>
           <li><a id="logout_tab" href="login.html" onClick=
 "logout();">Logout</a></li>
         </ul>
-        
+
       </div>
     </div>
   </div><!-- END Navbar -->
-  <div class="container-fluid" id="page_lectures"><!-- start lecture panel Div -->
-    <div class="row content">      
-      <div class="col-sm-2 text-center">
-          <a class="btn btn-primary">
-            Back
-            <i class="fa fa-book" aria-hidden="true"></i>
-          </a>
-      </div>      
-      <div class="col-sm-8"><!-- Start Lecture Panel -->
-      <h1 class="text-center" id="course_title">Lecture</h1>
-      
-      
-      </div><!-- End Lecture Panel -->
-      
-      
-      <div class="col-sm-2 text-center vertical-center">
-        <a class="btn btn-primary">
-          Next
-          <i class="fa fa-book" aria-hidden="true"></i>
-        </a>
-      </div>
+  <div class="container-fluid" id="page_lectures"><!-- START lecture panel -->
+    <div class="row content">
+      <div class="col-sm-2 text-center"></div>
+      <div class="col-sm-8"><!-- START lecture content Panel -->
+        <h1 class="text-center" id="course_title">course_title</h1>
+
+        <div class="row content">
+          <ul class="pagination" id="lecture_pagination">
+            <!-- Added by script -->
+            <li class="active"><a href="#">2</a></li>
+          </ul>
+        </div>
+
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+          <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+          <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+        </ul>
+
+        <div class="tab-content" id="lecture_content"> <!-- START tabs -->
+          <div id="home" class="tab-pane fade in active"> <!-- START video pane -->
+            <h3>Video Lecture</h3>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" width="560" height="315"></iframe>
+            </div>
+          </div> <!-- END video pane -->
+          <div id="menu1" class="tab-pane fade">
+            <h3>Reading Lecture</h3>
+            <p>Some content in menu 1.</p>
+          </div>
+          <div id="menu2" class="tab-pane fade">
+          <h3>Questions</h3>
+          <p>Some content in menu 2.</p>
+          </div>
+        </div> <!--- END tabs --->
+
+      </div><!-- END lecture content Panel -->
+
+      <div class="col-sm-2 text-center"></div>
     </div>
-    
-    
-  </div><!-- End of lecture panel Div -->
+  </div><!-- END lecture panel -->
 
 </body>
 </html>
