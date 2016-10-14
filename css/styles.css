@@ -30,7 +30,21 @@
     padding: 10px;
 }
 /**************************************/
+.tab-border {
+  border: 1px lightgrey;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  padding: 20px;
+}
 
+.nav-margin-top {
+  margin-top: 10px;
+}
+
+.no-text-cursor {
+  cursor: default;
+}
 
 
 /*** Completed Courses  ***/
@@ -43,11 +57,7 @@
 }
 
 /**************************************/
-.vid {
-  width:100%;
-  height:100%;
-  padding-bottom:66%;
-}
+
 
 
 /*** Accordion drop down arrow ***/

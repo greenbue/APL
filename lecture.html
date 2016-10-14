@@ -18,7 +18,7 @@
   <script src="js/lecture_data.js"></script>
 
 </head><!-- END Header -->
-<body onload="setTitle()">
+<body onload="loadCourse()">
   <div class="navbar navbar-inverse navbar-fixed-top"><!-- START Navbar -->
     <div class="container-fluid">
       <div class="navbar-header">
@@ -46,40 +46,39 @@
       </div>
     </div>
   </div><!-- END Navbar -->
-  <div class="container-fluid" id="page_lectures"><!-- START lecture panel -->
+  <div class="container-fluid hidden" id="lecture_root"><!-- START lecture panel -->
     <div class="row content">
       <div class="col-sm-2 text-center"></div>
-      <div class="col-sm-8"><!-- START lecture content Panel -->
-        <h1 class="text-center" id="course_title">course_title</h1>
-
-        <div class="row content">
+      <div class="col-sm-8" id="lecture_content_pane"><!-- START lecture content Panel -->
+        <h1 class="text-center" id="lecture_course_title">course_title</h1>
+        <div class="row text-center">
           <ul class="pagination" id="lecture_pagination">
-            <!-- Added by script -->
-            <li class="active"><a href="#">2</a></li>
+            <p>Lectures: </p>
+            <!-- Added by script : setPagination -->
           </ul>
         </div>
 
-        <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-          <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-          <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+        <ul class="nav nav-tabs nav-justified nav-margin-top">
+          <li class="active"><a data-toggle="tab" href="#home">Video</a></li>
+          <li><a data-toggle="tab" href="#menu1">Reading</a></li>
+          <li><a data-toggle="tab" href="#menu2">Excercise</a></li>
         </ul>
 
-        <div class="tab-content" id="lecture_content"> <!-- START tabs -->
+        <div class="tab-content tab-border" id="lecture_content"> <!-- START tabs -->
           <div id="home" class="tab-pane fade in active"> <!-- START video pane -->
-            <h3>Video Lecture</h3>
+            <h3 id="lecture_video_title">lecture_video_title</h3>
             <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" width="560" height="315"></iframe>
+              <iframe class="embed-responsive-item" id ="lecture_video" src="" frameborder="1" width="560" height="315"></iframe>
             </div>
           </div> <!-- END video pane -->
-          <div id="menu1" class="tab-pane fade">
+          <div id="menu1" class="tab-pane fade"> <!-- START reading pane -->
             <h3>Reading Lecture</h3>
-            <p>Some content in menu 1.</p>
-          </div>
-          <div id="menu2" class="tab-pane fade">
-          <h3>Questions</h3>
-          <p>Some content in menu 2.</p>
-          </div>
+            <p class="col-md-8" >Some content in menu 1.</p>
+          </div> <!-- END reading pane -->
+          <div id="menu2" class="tab-pane fade"> <!-- START question pane -->
+            <h3>Questions</h3>
+            <p>Some content in menu 2.</p>
+          </div> <!-- END question pane -->
         </div> <!--- END tabs --->
 
       </div><!-- END lecture content Panel -->
