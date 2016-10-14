@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $(".courses a.btn").click(function(){
       $(this).tab('show');
-      console.log("Hello");
+      console.log("Hello: " + this);
     });
     $(function() {
       if ( document.location.href.indexOf('#active') > -1 ) {
