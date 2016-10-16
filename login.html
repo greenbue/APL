@@ -1,0 +1,86 @@
+<html>
+<head><!-- START COPY THIS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/3dc14e6085.js"></script>
+  <meta charset="UTF-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+  <script src="js/tab.js"></script>
+  <script src="js/accordions.js"></script>
+  <script src="js/lecture.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    if (getCookie("login") == "true") {
+      console.log("YOU SHOULD NOT BE HERE");
+      window.location = "index.html";
+    }
+  </script>
+</head><!-- END COPY THIS -->
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top"><!-- START COPY THIS -->
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Advanced Personalised Learning (APL)
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a id="home_tab" href="index.html">Home</a></li>
+          
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a id="login_tab" href="login.html">Login</a></li>
+          <li class="active"><a id="logout_tab" href="login.html" onClick=
+"logout();">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- END COPY THIS -->
+  <div class="container-fluid">
+    <div class="container login-form">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 alert alert-danger" id="login-failed">
+          <a href="#" class="close" onClick="$('#login-failed').hide();">&times;</a>
+          <strong>Login Failed!</strong> Try again.
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Welcome to APL</h3>
+            </div>
+            <div class="panel-body">
+              <form role="form">
+                <fieldset>
+                  <div class="form-group">
+                    <input class="form-control" id="user-form" placeholder="E-mail" name="email" type="email" value="" autofocus>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="password-form" placeholder="Password" name="password" type="password" value="">
+                  </div>
+                  <!-- Change this to a button or input when using this as a form -->
+                  <button type="button" class="btn btn-success btn-block" onclick="login();">Login</button>
+                  <p>New Member? <a href="#" class="">Sign up</a></p>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

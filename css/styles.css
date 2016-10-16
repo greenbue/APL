@@ -84,3 +84,9 @@
 	transform:         rotate(90deg);
 }
 /**************************************/
+
+
+/*** Login ***/
+.login-form {
+  margin: 100px auto;
+}
