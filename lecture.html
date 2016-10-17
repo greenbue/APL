@@ -2,7 +2,7 @@
 <head><!-- START Header -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://use.fontawesome.com/3dc14e6085.js"></script>
-  <meta charset="UTF-8"> 
+  <meta charset="UTF-8">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Optional theme -->
@@ -15,9 +15,11 @@
   <script src="js/accordions.js"></script>
   <script src="js/lecture.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/lecture_data.js"></script>
+  <script src="js/login.js"></script>
 
 </head><!-- END Header -->
-<body onload="setTitle()">
+<body onload="loadCourse()">
   <div class="navbar navbar-inverse navbar-fixed-top"><!-- START Navbar -->
     <div class="container-fluid">
       <div class="navbar-header">
@@ -34,42 +36,59 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
           <li class="active"><a id="home_tab" href="index.html">Home</a></li>
-          
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a id="login_tab" href="login.html">Login</a></li>
           <li><a id="logout_tab" href="login.html" onClick=
 "logout();">Logout</a></li>
         </ul>
-        
+
       </div>
     </div>
   </div><!-- END Navbar -->
-  <div class="container-fluid" id="page_lectures"><!-- start lecture panel Div -->
-    <div class="row content">      
-      <div class="col-sm-2 text-center">
-          <a class="btn btn-primary">
-            Back
-            <i class="fa fa-book" aria-hidden="true"></i>
-          </a>
-      </div>      
-      <div class="col-sm-8"><!-- Start Lecture Panel -->
-      <h1 class="text-center" id="course_title">Lecture</h1>
-      
-      
-      </div><!-- End Lecture Panel -->
-      
-      
-      <div class="col-sm-2 text-center vertical-center">
-        <a class="btn btn-primary">
-          Next
-          <i class="fa fa-book" aria-hidden="true"></i>
-        </a>
-      </div>
+  <div class="container-fluid hidden" id="lecture_root"><!-- START lecture panel -->
+    <div class="row content">
+      <div class="col-sm-2 text-center"></div>
+      <div class="col-sm-8" id="lecture_content_pane"><!-- START lecture content Panel -->
+        <h1 class="text-center" id="lecture_course_title">course_title</h1>
+        <div id="lecture_body"> <!-- START lecture body -->
+          <div class="row text-center">
+            <ul class="pagination" id="lecture_pagination">
+              <p>Lectures: </p>
+              <!-- Added by script : setPagination -->
+            </ul>
+          </div>
+
+          <ul class="nav nav-tabs nav-justified nav-margin-top">
+            <li class="active"><a data-toggle="tab" href="#home">Video</a></li>
+            <li><a data-toggle="tab" href="#menu1">Reading</a></li>
+            <li><a data-toggle="tab" href="#question_pane">Excercise</a></li>
+          </ul>
+
+          <div class="tab-content tab-border max-vertical" id="lecture_content"> <!-- START tabs -->
+            <div id="home" class="tab-pane fade in active"> <!-- START video pane -->
+              <h3 id="lecture_video_title">lecture_video_title</h3>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" id ="lecture_video" src="" frameborder="1" width="560" height="315"></iframe>
+              </div>
+            </div> <!-- END video pane -->
+            <div id="menu1" class="tab-pane fade embed"> <!-- START reading pane -->
+              <h3 id="lecture_reading_title">Reading Lecture</h3>
+              <!--<embed class="embed" id="lecture_reading_content" height="800" src=""></embed>-->
+              <div id="lecture_reading_content"></div>
+            </div> <!-- END reading pane -->
+            <div id="question_pane" class="tab-pane fade">
+            <h3 id="lecture_questions_title">Questions</h3>
+              <!-- Questions added by loadQuestion method -->
+            </div>
+          </div> <!-- END tabs -->
+        </div> <!-- END lecture body -->
+      </div><!-- END lecture content Panel -->
+
+      <div class="col-sm-2 text-center"></div>
     </div>
-    
-    
-  </div><!-- End of lecture panel Div -->
+  </div><!-- END lecture panel -->
 
 </body>
 </html>
