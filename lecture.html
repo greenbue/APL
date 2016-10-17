@@ -51,36 +51,38 @@
       <div class="col-sm-2 text-center"></div>
       <div class="col-sm-8" id="lecture_content_pane"><!-- START lecture content Panel -->
         <h1 class="text-center" id="lecture_course_title">course_title</h1>
-        <div class="row text-center">
-          <ul class="pagination" id="lecture_pagination">
-            <p>Lectures: </p>
-            <!-- Added by script : setPagination -->
+        <div id="lecture_body"> <!-- START lecture body -->
+          <div class="row text-center">
+            <ul class="pagination" id="lecture_pagination">
+              <p>Lectures: </p>
+              <!-- Added by script : setPagination -->
+            </ul>
+          </div>
+
+          <ul class="nav nav-tabs nav-justified nav-margin-top">
+            <li class="active"><a data-toggle="tab" href="#home">Video</a></li>
+            <li><a data-toggle="tab" href="#menu1">Reading</a></li>
+            <li><a data-toggle="tab" href="#question_pane">Excercise</a></li>
           </ul>
-        </div>
 
-        <ul class="nav nav-tabs nav-justified nav-margin-top">
-          <li class="active"><a data-toggle="tab" href="#home">Video</a></li>
-          <li><a data-toggle="tab" href="#menu1">Reading</a></li>
-          <li><a data-toggle="tab" href="#menu2">Excercise</a></li>
-        </ul>
-
-        <div class="tab-content tab-border" id="lecture_content"> <!-- START tabs -->
-          <div id="home" class="tab-pane fade in active"> <!-- START video pane -->
-            <h3 id="lecture_video_title">lecture_video_title</h3>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" id ="lecture_video" src="" frameborder="1" width="560" height="315"></iframe>
+          <div class="tab-content tab-border max-vertical" id="lecture_content"> <!-- START tabs -->
+            <div id="home" class="tab-pane fade in active"> <!-- START video pane -->
+              <h3 id="lecture_video_title">lecture_video_title</h3>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" id ="lecture_video" src="" frameborder="1" width="560" height="315"></iframe>
+              </div>
+            </div> <!-- END video pane -->
+            <div id="menu1" class="tab-pane fade embed"> <!-- START reading pane -->
+              <h3 id="lecture_reading_title">Reading Lecture</h3>
+              <!--<embed class="embed" id="lecture_reading_content" height="800" src=""></embed>-->
+              <div id="lecture_reading_content"></div>
+            </div> <!-- END reading pane -->
+            <div id="question_pane" class="tab-pane fade">
+            <h3 id="lecture_questions_title">Questions</h3>
+              <!-- Questions added by loadQuestion method -->
             </div>
-          </div> <!-- END video pane -->
-          <div id="menu1" class="tab-pane fade"> <!-- START reading pane -->
-            <h3>Reading Lecture</h3>
-            <p class="col-md-8" >Some content in menu 1.</p>
-          </div> <!-- END reading pane -->
-          <div id="menu2" class="tab-pane fade"> <!-- START question pane -->
-            <h3>Questions</h3>
-            <p>Some content in menu 2.</p>
-          </div> <!-- END question pane -->
-        </div> <!--- END tabs --->
-
+          </div> <!-- END tabs -->
+        </div> <!-- END lecture body -->
       </div><!-- END lecture content Panel -->
 
       <div class="col-sm-2 text-center"></div>
