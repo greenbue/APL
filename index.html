@@ -10,6 +10,9 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+  <!-- Highcharts Library for Graphs -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
   <link rel="stylesheet" href="css/styles.css" type="text/css"/>
   <script src="js/tab.js"></script>
   <script src="js/accordions.js"></script>
@@ -162,8 +165,50 @@
                   <tr>
                     <td colspan="6" class="hiddenRow">
                       <div id="Stats1" class="collapse">
-                        <div id="text" >
-                          Display some statistics here maybe some visualisations
+                        <div class="row">
+                          <div class="col-md-8">
+                            <div class = "statsdiv">
+                              <h2>Individual Topics</h2>
+                              <div class="graph" id="indtopic1"></div>
+                            </div>
+                          </div>
+                          </div>
+                            <div class ="row">
+                              <div class="col-xs-4">
+                                <div class="statsdiv">
+                                  <h2>Overall Performance</h2>
+                                  <p>something here</p>
+                                  <p><a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+                                </div>
+                              </div>
+                            <div class="col-xs-4">
+                              <div class = "statsdiv">
+                                <h2>Achievements Earned</h2>
+<div class="badgecontainer">
+ <div class="badge f">
+   <div class="numbertext">1 / 2</div>
+   <img src="images/badges/MoH.png" style="width:100%">
+   <div class="text">Medal of Honor</div>
+ </div>
+
+ <div class="badge f">
+   <div class="numbertext">2 / 2</div>
+   <img src="images/badges/PH.png" style="width:100%">
+   <div class="text">Purple Heart</div>
+ </div>
+
+ <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+ <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+2/12 Achievements Earned
+</div>
+                              </div>
+                            </div>
                         </div>
                       </div>
                     </td>
@@ -220,5 +265,8 @@
       </div><!-- End of courses_content Div -->
     </div><!-- courses -->
   </div><!-- End of user profile page Div -->
+
+  <script src="js/completed.js"></script>
+
 </body>
 </html>

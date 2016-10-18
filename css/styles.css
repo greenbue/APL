@@ -41,7 +41,7 @@
   padding: 20px;
 }
 
-.vertical-center {  
+.vertical-center {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -50,7 +50,7 @@
 	-o-transform:      translateY(-50%);
 	transform:         translateY(-50%);
 }
-  
+
 .embed {
   width: 100%;
   height: 100%;
@@ -75,7 +75,7 @@
 
 .use-parent-vertical{
   max-height: 100%
-  
+
 }
 
 /**************************************/
@@ -83,11 +83,115 @@
 
 /*** Completed Courses  ***/
 .hiddenRow {
-  padding: 0 !important;
+  padding: 10 10 10 10;
 }
 
 .hiddenRow #text{
   padding: 10px;
+}
+
+.statsdiv {
+  background-color: #f2f2f2;
+}
+
+.statsdiv h2{
+  background-color: #333333;
+  color: white;
+  padding: 10 10 10 10;
+}
+
+.graph {
+  padding: 15 10 10 10;
+  width: 100%;
+}
+
+
+.table [data-toggle="collapse"]:after {
+	font-family: 'Glyphicons Halflings';
+	content: "\e072";
+	float: left;
+	color: #b0c5d8;
+	font-size: 18px;
+	line-height: 22px;
+
+	-webkit-transform: rotate(-90deg);
+	-moz-transform:    rotate(-90deg);
+	-ms-transform:     rotate(-90deg);
+	-o-transform:      rotate(-90deg);
+	transform:         rotate(-90deg);
+}
+.table [data-toggle="collapse"].collapsed:after {
+	-webkit-transform: rotate(90deg);
+	-moz-transform:    rotate(90deg);
+	-ms-transform:     rotate(90deg);
+	-o-transform:      rotate(90deg);
+	transform:         rotate(90deg);
+}
+
+/* Slideshow container */
+.badgecontainer {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.numbertext {
+  color: #333333;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.text {
+  color: #333333;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.f {
+  -webkit-animation-name: f;
+  -webkit-animation-duration: 1.5s;
+  animation-name: f;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes f {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes f {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 /**************************************/
@@ -108,8 +212,7 @@
   height:auto;
 }
 
-.panel-heading [data-toggle="collapse"]:after
-{
+.panel-heading [data-toggle="collapse"]:after {
 	font-family: 'Glyphicons Halflings';
 	content: "\e072";
 	float: right;
@@ -123,8 +226,7 @@
 	-o-transform:      rotate(-90deg);
 	transform:         rotate(-90deg);
 }
-.panel-heading [data-toggle="collapse"].collapsed:after
-{
+.panel-heading [data-toggle="collapse"].collapsed:after {
 	-webkit-transform: rotate(90deg);
 	-moz-transform:    rotate(90deg);
 	-ms-transform:     rotate(90deg);
