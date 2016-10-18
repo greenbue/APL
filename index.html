@@ -42,102 +42,102 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a id="login_tab" href="login.html">Login</a></li>
           <li><a id="logout_tab" href="login.html" onClick=
-"logout();">Logout</a></li>
-        </ul>
+            "logout();">Logout</a></li>
+          </ul>
 
+        </div>
       </div>
-    </div>
-  </div><!-- END COPY THIS -->
-  <div class="container-fluid"><!-- user profile page Div -->
-    <div class="row content"><!-- row content Div -->
-      <div class="col-sm-6 col-md-6" id="user">
-        <h1>
-          User Profile
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </h1>
-        <img src="images/user.png" class="img-responsive img-thumbnail img-rounded">
-        <p>Welcome Back John Doe!</p>
-      </div>
-      <div class="col-sm-6 col-md-6" id="user-results">
-        <h1>
-          Achievements
-          <i class="fa fa-line-chart" aria-hidden="true"></i>
-        </h1>
-        <ul>
-          <li>
-            Completed the "Basic Algebra Course"!
-          </li>
-          <li>
-            Earned a badge for studying 2 days in a row!
-          </li>
-          <li>
-            Earned a badge for completing 5 courses!
-          </li>
-        </ul>
-      </div>
-    </div><!-- End of row content Div -->
-    <div class="row courses"><!-- courses Div -->
-      <div class="col-md-12 title_box">
-        <h2>COURSES</h2>
-      </div>
-      <div class="col-sm-3 col-md-3 box" id="courses_title"><!-- courses_title Div -->
-        <p>
-          <a class="btn btn-primary" id="active_tab" href="#active">
-            Active
-            <i class="fa fa-book" aria-hidden="true"></i>
-          </a>
-        </p>
-        <p>
-          <a class="btn btn-info" id="recommended_tab" href="#recommended">
-            Recommended
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-          </a>
-        </p>
-        <p>
-          <a class="btn btn-success" id="completed_tab" href="#completed">
-            Completed
-            <i class="fa fa-certificate" aria-hidden="true"></i>
-          </a>
-        </p>
-      </div><!-- End of courses_title Div -->
-      <div class="col-sm-9 col-md-9 box" id="courses_content"><!-- courses_content Div -->
-        <div class="tab-content"><!-- Tab Content Div -->
-          <div id="active" class="tab-pane fade in active">
-            <strong><u>ACTIVE Courses</u></strong>
-            <div class="panel-group" id="accordion">
-              <div class="panel panel-default"> <!--Starts here for an accordion-->
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                      <span class="glyphicon glyphicon-minus"></span>
-                      COMP 425 - Computational Logic
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                  <div class="panel-body">
-                    This course is concerned with the application of formal logic to problems in Computer Science, and with techniques for mechanising logical reasoning. Topics may include: systems of reasoning; logic programming; the application of temporal and modal logics; and the relationship between proofs, programs, specifications and types. Students are recommended to take MATH 309 or PHIL 211/334/335.
-                    <div class="progressrow">
-                      <div class="progress progress-striped active pull-left" style="width: 500px; margin: 0px auto; height: 40px; margin-right:10px;">
-                        <div id="progressbar" class="progress-bar progress-bar-success active" role="progressbar" style="width:40%;">
-                          40%
-                        </div>
-                      </div>
-                      <a class="btn btn-primary" onclick="loadLecture('COMP425')" id="course">
-                        Continue
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </div><!-- END COPY THIS -->
+    <div class="container-fluid"><!-- user profile page Div -->
+      <div class="row content"><!-- row content Div -->
+        <div class="col-sm-6 col-md-6" id="user">
+          <h1>
+            User Profile
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </h1>
+          <img src="images/user.png" class="img-responsive img-thumbnail img-rounded">
+          <p>Welcome Back John Doe!</p>
+        </div>
+        <div class="col-sm-6 col-md-6" id="user-results">
+          <h1>
+            Achievements
+            <i class="fa fa-line-chart" aria-hidden="true"></i>
+          </h1>
+          <ul>
+            <li>
+              Completed the "Basic Algebra Course"!
+            </li>
+            <li>
+              Earned a badge for studying 2 days in a row!
+            </li>
+            <li>
+              Earned a badge for completing 5 courses!
+            </li>
+          </ul>
+        </div>
+      </div><!-- End of row content Div -->
+      <div class="row courses"><!-- courses Div -->
+        <div class="col-md-12 title_box">
+          <h2>COURSES</h2>
+        </div>
+        <div class="col-sm-3 col-md-3 box" id="courses_title"><!-- courses_title Div -->
+          <p>
+            <a class="btn btn-primary" id="active_tab" href="#active">
+              Active
+              <i class="fa fa-book" aria-hidden="true"></i>
+            </a>
+          </p>
+          <p>
+            <a class="btn btn-info" id="recommended_tab" href="#recommended">
+              Recommended
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            </a>
+          </p>
+          <p>
+            <a class="btn btn-success" id="completed_tab" href="#completed">
+              Completed
+              <i class="fa fa-certificate" aria-hidden="true"></i>
+            </a>
+          </p>
+        </div><!-- End of courses_title Div -->
+        <div class="col-sm-9 col-md-9 box" id="courses_content"><!-- courses_content Div -->
+          <div class="tab-content"><!-- Tab Content Div -->
+            <div id="active" class="tab-pane fade in active">
+              <strong><u>ACTIVE Courses</u></strong>
+              <div class="panel-group" id="accordion">
+                <div class="panel panel-default"> <!--Starts here for an accordion-->
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <span class="glyphicon glyphicon-minus"></span>
+                        COMP 425 - Computational Logic
                       </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                      This course is concerned with the application of formal logic to problems in Computer Science, and with techniques for mechanising logical reasoning. Topics may include: systems of reasoning; logic programming; the application of temporal and modal logics; and the relationship between proofs, programs, specifications and types. Students are recommended to take MATH 309 or PHIL 211/334/335.
+                      <div class="progressrow">
+                        <div class="progress progress-striped active pull-left" style="width: 500px; margin: 0px auto; height: 40px; margin-right:10px;">
+                          <div id="progressbar" class="progress-bar progress-bar-success active" role="progressbar" style="width:40%;">
+                            40%
+                          </div>
+                        </div>
+                        <a class="btn btn-primary" onclick="loadLecture('COMP425')" id="course">
+                          Continue
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div> <!-- COMP 425 Panel -->
+                </div> <!-- COMP 425 Panel -->
+              </div>
             </div>
-          </div>
-          <div id="recommended" class="tab-pane fade in">
-            <strong><u>RECOMMENDED Courses</u></strong>
-          </div>
-          <div id="completed" class="tab-pane fade in">
-            <strong><u>COMPLETED Courses</u></strong>
+            <div id="recommended" class="tab-pane fade in">
+              <strong><u>RECOMMENDED Courses</u></strong>
+            </div>
+            <div id="completed" class="tab-pane fade in">
+              <strong><u>COMPLETED Courses</u></strong>
               <div id="tab_1"><table class="table muffin table-bordered table-hover margin-bottom0" style="border-collapse:collapse;">
                 <thead>
                   <tr>
@@ -172,43 +172,43 @@
                               <div class="graph" id="indtopic1"></div>
                             </div>
                           </div>
+                        </div>
+                        <div class ="row">
+                          <div class="col-xs-4">
+                            <div class="statsdiv">
+                              <h2>Overall Performance</h2>
+                              <p>something here</p>
+                              <p><a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+                            </div>
                           </div>
-                            <div class ="row">
-                              <div class="col-xs-4">
-                                <div class="statsdiv">
-                                  <h2>Overall Performance</h2>
-                                  <p>something here</p>
-                                  <p><a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+                          <div class="col-xs-4">
+                            <div class = "statsdiv">
+                              <h2>Achievements Earned</h2>
+                              <div class="badgecontainer">
+                                <div class="badge f">
+                                  <div class="numbertext">1 / 2</div>
+                                  <img src="images/badges/MoH.png" style="width:100%">
+                                  <div class="text">Medal of Honor</div>
                                 </div>
+
+                                <div class="badge f">
+                                  <div class="numbertext">2 / 2</div>
+                                  <img src="images/badges/PH.png" style="width:100%">
+                                  <div class="text">Purple Heart</div>
+                                </div>
+
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
                               </div>
-                            <div class="col-xs-4">
-                              <div class = "statsdiv">
-                                <h2>Achievements Earned</h2>
-<div class="badgecontainer">
- <div class="badge f">
-   <div class="numbertext">1 / 2</div>
-   <img src="images/badges/MoH.png" style="width:100%">
-   <div class="text">Medal of Honor</div>
- </div>
 
- <div class="badge f">
-   <div class="numbertext">2 / 2</div>
-   <img src="images/badges/PH.png" style="width:100%">
-   <div class="text">Purple Heart</div>
- </div>
+                              <br>
 
- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
- <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-
-<br>
-
-<div style="text-align:center">
-2/12 Achievements Earned
-</div>
+                              <div style="text-align:center">
+                                2/12 Achievements Earned
                               </div>
                             </div>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -250,11 +250,11 @@
                   </tr>
                   <tr>
                     <td colspan="6" class="hiddenRow">
-                        <div id="Stats3" class="collapse">
-                          <div id="text" >
-                            Display some statistics here maybe some visualisations
-                          </div>
+                      <div id="Stats3" class="collapse">
+                        <div id="text" >
+                          Display some statistics here maybe some visualisations
                         </div>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
