@@ -1,0 +1,136 @@
+<html>
+
+
+<head>
+
+
+<!-- START Header -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/3dc14e6085.js"></script>
+  <meta charset="UTF-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+ 
+
+
+ <!-- John's libraries  -->  
+ <script src="js/johnLibraries/angular.min.js"></script>
+ <script src="js/johnLibraries/angular-route.min.js"></script>
+ <script src="js/johnLibraries/angular-filter.min.js"></script>
+ <script src="js/johnLibraries/angular-animate.min.js"></script>
+
+ <script src="js/recommendedPage.js"></script>
+
+  <!-- Johns's CSS files -->
+ 
+
+
+
+
+
+
+
+
+</head><!-- END Header -->
+
+
+
+
+
+<!-- This tells the page angularjs is being used -->
+ <body ng-app = "myapp">
+
+
+
+  <div class="navbar navbar-inverse navbar-fixed-top"><!-- START Navbar -->
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Advanced Personalised Learning (APL)
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="active"><a id="home_tab" href="index.html">Home</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="login_tab" href="login.html">Login</a></li>
+          <li><a id="logout_tab" href="login.html" onClick=
+"logout();">Logout</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div><!-- END Navbar -->
+
+
+
+
+      
+   
+      
+   <div class="container-fluid" ng-controller = "MyCtrl"> <!-- START lecture panel -->
+
+    
+    <div class="row content">
+      <div class="col-sm-2 text-center"></div>
+      <div class="col-sm-8">
+
+        <h1 class=".sample-show-hide text-center">{{title}}</h2>
+        <h3 class=".sample-show-hide text-center">Not Sure what to take? That's okay, lets suggest some for you.</h3>
+
+
+        <!-- 
+
+          This div represents a list full of recommended courses.
+          Once a course is chosen, the whole div will become hidden 
+
+        -->
+
+        <div id= "recommendedList" class = "row well" ng-repeat = "course in recommendedCourses"> 
+          <div class = "col-sm-2">{{course.title}}</div>
+          <div class = "col-sm-6">{{course.description}}</div>
+          <div class = "col-sm-4"> 
+              Match: {{course.match}} 
+              <button class = "btn btn-default"> Find More</button>
+          </div>
+        </div> 
+
+
+        <!-- 
+
+          This div represents a specific recommended courses.
+
+        -->
+        <div id = "currentCourse" ng-hide = "currentCourse">
+
+
+        </div>
+
+
+
+
+
+
+      </div>
+      
+
+
+
+
+
+</body> 
+</html>
