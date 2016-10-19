@@ -24,19 +24,12 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	// The currently selected course:
 	$scope.currentCourse = {};
 
-
-
-
-	//Changes the page title:
-	$scope.changeTitle = function(courseName){
-		$scope.title = courseName;
-	}
-
-	// Fills in information for the specific course/ Goes pack to the recommendedList
+	// Fills in information for the specific course/ Or goes back to the recommendedList
 	$scope.currentCourse = function(course){
 		if($scope.hideCourse){
 			$scope.hideCourse = !$scope.hideCourse;
 			$scope.title = "Recommended Courses"
+			//Animation probs...
            	$timeout(function (){
     			$scope.hideRecommendedList = !$scope.hideRecommendedList;
 			}, 180);
@@ -56,9 +49,6 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
         }  
 	}
 
-	// $scope.hideCourseFromList = function(){
-	// 	$scope.currentCourse.permission  
-	// }
 
 	//Checks whether a course was selected, if so it hides the recommended list
 	$scope.hideCourse = false;
@@ -84,21 +74,25 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	    	popularity: 232,
 	    	permission: true,
 	    	video: 'http://player.vimeo.com/video/63534746',
-	    	description: '(Description for Swen421) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	    	description: '(Description for Swen421)  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 	    },
 
 
 	    {
-	    	title: "A Fun Course", 
-	    	match: '30%',
+	    	title: "SWEN999", 
+	    	match: '10%',
 	    	popularity: 13132,
 	    	permission: true,
 	    	video: 'https://player.vimeo.com/video/14396098',
-	    	description: '(Description for a fun course) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	    	description: '(Description for the ultimate course) amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
 
-		}
-	    
+		}  
 	];
+
+
+
+
+	// Activating the course should be simulated. This can be done by creating an "active" course page for this one. 
 
 	$scope.removeCourse = function(){
 		//There's probably a cleaner way to do this... But hey, it works.
@@ -109,11 +103,10 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 		}
 	}
 
-	//Button options, I be more creative here...
+	//Fake Button options, I better be more creative here...
 	$scope.fakeButtonsSubject = ['Math','CompSci', 'Art', 'Law']
 	$scope.fakeButtonsLevel = ['100','200','300','400','500']
-
-
+	$scope.fakeKeyWords = ['These','are', 'my', 'keys']
 
 
 }])

@@ -20,17 +20,21 @@
  
 
 
- <!-- John's libraries  -->  
+
+
+
+
+ <!-- 
+
+      John's libraries and CSS Files
+
+ -->  
  <script src="js/johnLibraries/angular.min.js"></script>
  <script src="js/johnLibraries/angular-route.min.js"></script>
  <script src="js/johnLibraries/angular-filter.min.js"></script>
  <script src="js/johnLibraries/angular-animate.min.js"></script>
  <script src="js/recommendedPage.js"></script>
-  <!-- Johns's CSS files -->
  <link rel="stylesheet" href="css/johnCss.css" type="text/css"/>
-
-
-
 
 
 
@@ -43,8 +47,12 @@
 
 
 
-<!-- This tells the page angularjs is being used -->
- <body ng-app = "myapp">
+ <body>
+
+
+
+
+
 
 
 
@@ -83,11 +91,15 @@
    
    <!-- 
 
-      Will move to index.html, or keep it as it is.
+      START OF JOHN'S CODE
+      Will move this block to index.html, but keep this page for reference...
+      Note: You'll need John's Libraries and CSS files here
+
+      Note: The ng-app="my-app" bit, that's to dictate that this <div> is all angularjs code.
 
    -->
 
-<div id="recommendedPageContainer" class="container-fluid" ng-controller = "MyCtrl"> 
+<div ng-app = "myapp" id="recommendedPageContainer" class="container-fluid" ng-controller = "MyCtrl"> 
 
     <div class="row content">
 
@@ -154,16 +166,33 @@
 
         -->
 
-        <div id= "recommendedList" class = "row well hideListAnimation " ng-repeat = "course in recommendedCourses | filter:{ permission: true}" ng-show = "hideRecommendedList" ng-cloak> 
-          <div class = "col-xs-2">{{course.title}}</div>
-          <div class = "col-xs-6">{{course.description| limitTo: 100}}{{course.description.length > 100 ? '...' : ''}}
-          </div>
-          <div class = "col-xs-4"> 
-              Match: {{course.match}} <br>
-              Likes: {{course.popularity}} <br>
+        <div id= "recommendedList" class = "panel panel-info courseRow row hideListAnimation " ng-repeat = "course in recommendedCourses | filter:{ permission: true}" ng-show = "hideRecommendedList" ng-cloak> 
 
-              <button class = "btn btn-default" ng-click = "currentCourse(course)"> Find More</button>
-          </div>
+
+          <div class = "panel-heading text-center courseRow1"> 
+           {{course.title}}  </div>
+          <div class = "panel-body">
+
+                <div class = "col-xs-8 courseRow2">
+                {{course.description| limitTo: 100}}{{course.description.length > 100 ? '...' : ''}}
+                </div>
+
+
+                <div class = "col-xs-4 courseRow3"> 
+                    <div class = "col-xs-12" >   
+                       <div class = "rowLabel"> Match: </div> {{course.match}} <br>
+                       <div class = "rowLabel"> Likes: </div> {{course.popularity}} 
+                    </div>
+                     
+                    <div class = "col-xs-12" >   
+                        <button class = "btn btn-default" ng-click = "currentCourse(course)">  Find More
+                        </button>
+
+                    </div>   
+
+                </div>
+          </div>  
+
         </div> 
 
 
@@ -172,43 +201,52 @@
           This div represents a specific recommended courses.
 
         -->
-        <div id = "currentCourse" class = "row well hideCourseAnimation" ng-show = "hideCourse" ng-cloak>
+        <div id = "currentCourse" class = "panel panel-info row hideCourseAnimation" ng-show = "hideCourse" ng-cloak>
 
 
-             <div class = "col-xs-12 text-center" id = "titleCourse">
-                  <h2> {{currentCourse.title}} </h2>
+             <div class = "panel-heading col-xs-12 text-center" id = "titleCourse">
+                 {{currentCourse.title}} 
              </div>
 
-             <div class = "col-xs-12 text-center" id = "videoCourse">
+             <div class = "panel-body">
+                 <div class = "col-xs-12 text-center" id = "videoCourse">
 
-                    <iframe width="420" height="315"
-                    ng-src="{{currentCourse.video | trusted}}" frameborder="0" allowfullscreen>
-                    </iframe>
+                        <iframe width="420" height="315"
+                        ng-src="{{currentCourse.video | trusted}}" frameborder="0" allowfullscreen>
+                        </iframe>
 
-              </div>
+                  </div>
 
-             <div class = "col-xs-12" id = "descriptionCourse">
-               <div>
-                 {{currentCourse.description}} 
-               </div>
-             </div>
-
-
-             <div class = "col-xs-12 text-right" >
-                 <div>
-
+                 <div class = "col-xs-12" id = "descriptionCourse">
+                   <div>
+                     {{currentCourse.description}} 
+                   </div>
                  </div>
 
-                 <div id = "buttonsCourse">
-                    <button class = "btn btn-default" ng-click = "currentCourse()"> 
-                        Go Back
-                    </button>
-                    <button class = "btn btn-default" type="button" data-toggle="modal" data-target="#registerModal"> 
-                        Register For course
-                    </button>
-                 </div>
+
+
+                  <div class = "col-xs-12" >
+                     <div class = "col-xs-6 text-left">
+                       Match: {{currentCourse.match}} <br>
+                       Likes: {{currentCourse.popularity}} <br>
+                     </div>
+
+                     <div class = "col-xs-6 text-right" id = "buttonsCourse">
+                        <button class = "btn btn-default" ng-click = "currentCourse()"> 
+                            Go Back
+                        </button>
+                        <button class = "btn btn-default" type="button" data-toggle="modal" data-target="#registerModal"> 
+                            Register For course
+                        </button>
+                  </div>
                 
              </div>
+
+
+             </div>
+
+
+             
             
         </div>
 
@@ -257,19 +295,26 @@
       </div>
 
   
-   </div> <!-- END lecture body -->
-</div><!-- END lecture content Panel -->
+   </div> 
+</div>
+
+
+   <!-- 
+
+      END OF JOHN'S CODE
+
+   -->
 
 
 
 
+   <!-- Just a thought, maybe a sticky footer will look nice? -->
 
-
-<footer class="footer">
-  <div class="container">
-    <p class="text-muted">Place sticky footer content here.</p>
-  </div>
-</footer>
+   <!--  <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </footer> -->
 
 
 </body> 

@@ -61,6 +61,69 @@
 	padding-right: -30px;*/
 }
 
+#recommendedList{
+	color: black;
+}
+
+
+
+/*
+
+		These are for recommended course rows
+
+*/
+
+.courseRow{
+	background-image: #31708f;
+	padding-bottom: 175px;
+	height: 150px;
+
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+}
+
+.courseRow1{
+	font-weight: bold;
+	font-size: 18px;
+}
+.courseRow2{
+	/*border-right: 1px solid black;
+    border-left: 1px solid black;*/
+}
+.courseRow3{
+
+}
+
+.rowLabel{
+	display: inline;
+	/*font-size: 18px;*/
+	font-weight: bold;
+}
+
+.courseRow3 button{
+	margin-top: 8px;
+}
+
+
+/*
+
+		These are for specific recommeded courses
+
+*/
+
+#currentCourse{
+	margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+#titleCourse{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
 #videoCourse{
 	margin-top: 15px;
 	margin-bottom: 30px;
