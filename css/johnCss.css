@@ -75,13 +75,9 @@
 
 .courseRow{
 	background-image: #31708f;
-	padding-bottom: 175px;
-	height: 150px;
-
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 15px;
-
 }
 
 .courseRow1{
@@ -141,23 +137,31 @@
 	margin-bottom: 30px;
 }
 
+
+
+
+
+
+
+
 /*
-
-	This is for the sticky footer:
-
+	This is an attempted sticky footer:
 */
 
-html {
+/*html {
     position: relative;
     min-height: 100%;
+}*/
+
+/*body {
+    margin-bottom: 250px; Height of the footer 
 }
-body {
-    margin-bottom: 250px; /* Height of the footer */
-}
-footer {
+*/
+
+/*footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 200px; /* Example value */
-    /*background-color: grey;*/
-}
+    height: 200px; Example value 
+ }
+*/

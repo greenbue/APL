@@ -99,14 +99,40 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 		for(var i = 0; i< $scope.recommendedCourses.length; i++){
 			if($scope.currentCourse.title == $scope.recommendedCourses[i].title){
 				$scope.recommendedCourses[i].permission = false;
+				//Okay, now the user is registered to the course...
+				$scope.registeredCourses.push($scope.recommendedCourses[i]);
+
 			}
 		}
 	}
+
+
+	//These are the registered courses, once you removed some courses from the recommended page it should update the active courses
+	$scope.registeredCourses = [];
+
+
 
 	//Fake Button options, I better be more creative here...
 	$scope.fakeButtonsSubject = ['Math','CompSci', 'Art', 'Law']
 	$scope.fakeButtonsLevel = ['100','200','300','400','500']
 	$scope.fakeKeyWords = ['These','are', 'my', 'keys']
+
+
+
+	//There's jQuery remove/add of a bootstrap icon. Not compatable with my stuff unfortunately, But easy to fix!
+	$scope.glyphicon = false;
+	$scope.glyphiconToggle = function(){
+		$scope.glyphicon = !$scope.glyphicon;
+	}
+	$scope.glyphiconClass = function(){
+		//$scope.glyphicon = !$scope.glyphicon;
+		if($scope.glyphicon){
+			return "glyphicon-plus";
+		}
+		else{
+			return "glyphicon-minus";
+		}
+	}
 
 
 }])
