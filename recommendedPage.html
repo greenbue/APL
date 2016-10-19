@@ -1,5 +1,6 @@
 <html>
 
+ <meta http-equiv="Content-Security-Policy" content="child-src *;">
 
 <head>
 
@@ -24,11 +25,9 @@
  <script src="js/johnLibraries/angular-route.min.js"></script>
  <script src="js/johnLibraries/angular-filter.min.js"></script>
  <script src="js/johnLibraries/angular-animate.min.js"></script>
-
  <script src="js/recommendedPage.js"></script>
-
   <!-- Johns's CSS files -->
-<link rel="stylesheet" href="css/johnCss.css" type="text/css"/>
+ <link rel="stylesheet" href="css/johnCss.css" type="text/css"/>
 
 
 
@@ -82,31 +81,84 @@
 
       
    
-      
-<div class="container-fluid" ng-controller = "MyCtrl"> <!-- START lecture panel -->
+   <!-- 
+
+      Will move to index.html, or keep it as it is.
+
+   -->
+
+<div id="recommendedPageContainer" class="container-fluid" ng-controller = "MyCtrl"> 
 
     <div class="row content">
 
-      <div class="col-sm-2 text-center"></div>
+      <div class="col-xs-12 col-sm-2 well">
+
+        <div class = "filterOption col-xs-4 col-sm-12">
+          <div class = "filterLabel"> 
+              Arrange By 
+          </div>
+
+          <div class = "buttonOptions"> 
+              <button class = "btn btn-default" >
+                  My Skills
+              </button>
+              <button class = "btn btn-default" >
+                  Popularity
+              </button>
+          </div> 
+        
+        </div>
+
+        <div class = "filterOption col-xs-4 col-sm-12">
+
+         <div class = "filterLabel"> 
+             Course level 
+         </div>
+
+          <div class = "buttonOptions">
+              <button class = "btn btn-default"  ng-repeat = "button in fakeButtonsLevel | limitTo:3">
+                {{button}}
+              </button>
+          </div>
+
+        </div> 
+
+        <div class = "filterOption col-xs-4 col-sm-12">
+         <div class = "filterLabel">  
+            Subject area 
+         </div>
+          <div class = "buttonOptions">
+             <button class = "btn btn-default"  ng-repeat = "button in fakeButtonsSubject | limitTo:4">
+              {{button}}
+            </button>
+          </div>
+        </div>
+
+      </div>
       
-      <div class="col-sm-8">
-        <h1 class=".sample-show-hide text-center">{{title}}</h2>
+
+
+
+
+
+      <div id = "recommendedMain" class="col-xs-12 col-sm-10">
+        <!-- <h1 class=".sample-show-hide text-center">{{title}}</h2> -->
        <!--  <h3 class=".sample-show-hide text-center">Not Sure what to take? That's okay, lets suggest some for you.</h3> -->
 
-      
+    
 
-
-            <!-- 
+       <!-- 
 
           This div represents a list full of recommended courses.
           Once a course is chosen, the whole div will become hidden 
 
         -->
 
-        <div id= "recommendedList" class = "row well hideListAnimation " ng-repeat = "course in recommendedCourses" ng-show = "hideRecommendedList" ng-cloak> 
-          <div class = "col-sm-2">{{course.title}}</div>
-          <div class = "col-sm-6">{{course.description}}</div>
-          <div class = "col-sm-4"> 
+        <div id= "recommendedList" class = "row well hideListAnimation " ng-repeat = "course in recommendedCourses | filter:{ permission: true}" ng-show = "hideRecommendedList" ng-cloak> 
+          <div class = "col-xs-2">{{course.title}}</div>
+          <div class = "col-xs-6">{{course.description| limitTo: 100}}{{course.description.length > 100 ? '...' : ''}}
+          </div>
+          <div class = "col-xs-4"> 
               Match: {{course.match}} <br>
               Likes: {{course.popularity}} <br>
 
@@ -121,15 +173,41 @@
 
         -->
         <div id = "currentCourse" class = "row well hideCourseAnimation" ng-show = "hideCourse" ng-cloak>
-             <div class = "col-sm-3"> {{currentCourse.title}} </div>
-             <div class = "col-sm-9">
-             <div> {{currentCourse.description}} </div>
-                <button class = "btn btn-default" type="button" data-toggle="modal" data-target="#registerModal"> 
-                    Register For course
-                </button>
-                <button class = "btn btn-default" ng-click = "currentCourse()"> 
-                    Go Back to Recommended Page
-                </button>
+
+
+             <div class = "col-xs-12 text-center" id = "titleCourse">
+                  <h2> {{currentCourse.title}} </h2>
+             </div>
+
+             <div class = "col-xs-12 text-center" id = "videoCourse">
+
+                    <iframe width="420" height="315"
+                    ng-src="{{currentCourse.video | trusted}}" frameborder="0" allowfullscreen>
+                    </iframe>
+
+              </div>
+
+             <div class = "col-xs-12" id = "descriptionCourse">
+               <div>
+                 {{currentCourse.description}} 
+               </div>
+             </div>
+
+
+             <div class = "col-xs-12 text-right" >
+                 <div>
+
+                 </div>
+
+                 <div id = "buttonsCourse">
+                    <button class = "btn btn-default" ng-click = "currentCourse()"> 
+                        Go Back
+                    </button>
+                    <button class = "btn btn-default" type="button" data-toggle="modal" data-target="#registerModal"> 
+                        Register For course
+                    </button>
+                 </div>
+                
              </div>
             
         </div>
@@ -151,13 +229,16 @@
                   <h4 class="modal-title">Registration for {{currentCourse.title}}</h4>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to register?</p>
-                  <p>Are you sure you want to register?</p>
-                  <p>Are you sure you want to register?</p>
+                  <p>
+                      Are you sure you want to register?
+
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                  </p>
+                  
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal" ng-click = "currentCourse(); removeCourse()">Yes</button>
                 </div>
               </div>
 
@@ -167,17 +248,21 @@
 
      </div> 
 
+      <div ng-repeat="media in product.media">
+        <div class="thumbnail">
+          <div class="video-container">
+            <iframe width="100%" ng-src="{{getIframeSrc(media.src)}}" frameborder="0 " allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
 
-
-     <div class="col-sm-2 text-center"></div>
-
-
+  
    </div> <!-- END lecture body -->
 </div><!-- END lecture content Panel -->
 
 
 
-      
+
 
 
 <footer class="footer">
