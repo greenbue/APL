@@ -96,12 +96,12 @@ $('#Stats1').on("shown.bs.collapse", function(){
           },
           {
               name: 'Attempt2',
-              data: [25, 40, 35, 20, 10, 25],
+              data: [30, 40, 60, 60, 50, 25],
               pointPlacement: 'on'
           },
           {
               name: 'Attempt2',
-              data: [30, 45, 55, 25, 15, 30],
+              data: [40, 50, 70, 75, 65, 30],
               pointPlacement: 'on'
           }]
 
