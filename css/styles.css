@@ -128,17 +128,11 @@
 	transform:         rotate(90deg);
 }
 
-.test {
 
-    float: right;
-    margin-right: 1em;
-
-}
 
 /* Achievements */
 .badgeicon {
   background-color: #f2f2f2;
-
   padding: 10 10 10 10;
 }
 
@@ -169,6 +163,7 @@
 
 
 .prev, .next {
+  background-color: #333333;
   cursor: pointer;
   position: absolute;
   top: 50%;

@@ -12,6 +12,8 @@
 
   <!-- Highcharts Library for Graphs -->
   <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/highcharts-more.js"></script>
+  <script src="js/themes/gray.js"></script>
 
   <link rel="stylesheet" href="css/styles.css" type="text/css"/>
   <script src="js/tab.js"></script>
@@ -169,7 +171,7 @@
                           <div class="col-xs-4">
                             <div class="statsdiv">
                               <h2>Overall Performance</h2>
-                              <p>something here</p>
+                              <div class="graph" id="overall1"></div>
                             </div>
                           </div>
                           <div class="col-xs-4">
@@ -184,8 +186,8 @@
 
                                 <div class="badge f" data-toggle="modal" data-target="#gridSystemModal">
                                   <div class="numbertext">2 / 2</div>
-                                  <img src="images/badges/PH.png" style="width:100%">
-                                  <div class="text">Purple Heart</div>
+                                  <img src="images/badges/DM.png" style="width:100%">
+                                  <div class="text">Defence Medal</div>
                                 </div>
 
                                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -204,8 +206,8 @@
                           </div>
                           <div class="col-xs-4">
                             <div class="statsdiv">
-                              <h2>Something Else</h2>
-                              <p>something here</p>
+                              <h2>Understanding</h2>
+                              <div class="graph" id="understanding1"></div>
                             </div>
                           </div>
                         </div>
@@ -311,7 +313,7 @@
                         <div class = "badgeicon">
                           <img src="images/badges/DSC.png" style="width:100%; opacity: 0.2">
                           <div style="text-align:center">
-                            Distinguished Service Cross
+                            Service Cross
                           </div>
                           <div style="margin-top: 10px;">
                             <img src="images/badges/LockIcons/locked.png" style="margin-left: 10px;" class="pull-right">
@@ -383,9 +385,14 @@
                       <div class="col-sm-3">
                         <div class = "badgeicon">
                           <img src="images/badges/MoH.png" style="width:100%">
-                          <div style="text-align:center">
-                            Medal of Honor
+                          <div style="margin-top: 10px;">
+                            <!--<img src="images/badges/LockIcons/unlocked.png" style="margin-left: 10px;" class="pull-right">-->
+                            <div style="text-align:center">
+                              Medal of Honor
+                            </div>
                           </div>
+
+
                         </div>
                       </div>
 

@@ -1,41 +1,150 @@
+
+
+
 $('#Stats1').on("shown.bs.collapse", function(){
-  $('#indtopic1').highcharts({
-      title: {
-          text: 'Performance on Each Topic'
-      },
-      xAxis: {
-          categories: ['Topic1', 'Topic2', 'Topic3', 'Topic4', 'Topic5']
-      },
-      yAxis: {
-        title: {
-          text: 'Score'
-        }
-      },
-      labels: {
-          items: [{
-              style: {
-                  left: '50px',
-                  top: '18px',
-                  color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-              }
+
+  $('#overall1').highcharts({
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: 'pie'
+    },
+    title: {
+      text: 'Overall Performance (All Attempts)'
+    },
+    tooltip: {
+      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        dataLabels: {
+          enabled: false
+        },
+        showInLegend: true
+      }
+    },
+    credits: {
+      enabled: false
+    },
+    series: [{
+      name: 'Brands',
+      colorByPoint: true,
+      data: [{
+        name: 'Topic1',
+        y: 20
+      }, {
+        name: 'Topic2',
+        y: 35,
+        sliced: true,
+        selected: true
+      }, {
+        name: 'Topic3',
+        y: 25
+      }, {
+        name: 'Topic4',
+        y: 10
+      }, {
+        name: 'Topic5',
+        y: 10
+      }]
+    }]
+  });
+
+
+      $('#understanding1').highcharts({
+
+          chart: {
+              polar: true,
+              type: 'line'
+          },
+
+          title: {
+              text: 'Understanding',
+              x: -80
+          },
+
+          pane: {
+              size: '80%'
+          },
+          credits: {
+            enabled: false
+          },
+          xAxis: {
+              categories: ['Topic1', 'Topic2', 'Topic3', 'Topic4','Topic5', 'Overall'],
+              tickmarkPlacement: 'on',
+              lineWidth: 0
+          },
+
+          yAxis: {
+              gridLineInterpolation: 'polygon',
+              lineWidth: 0,
+              min: 0
+          },
+
+          tooltip: {
+              shared: true,
+              pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+          },
+
+          series: [{
+              name: 'Attempt1',
+              data: [20, 35, 25, 10, 10, 20],
+              pointPlacement: 'on'
+          },
+          {
+              name: 'Attempt2',
+              data: [25, 40, 35, 20, 10, 25],
+              pointPlacement: 'on'
+          },
+          {
+              name: 'Attempt2',
+              data: [30, 45, 55, 25, 15, 30],
+              pointPlacement: 'on'
           }]
-      },
-      credits: {
-        enabled: false
-      },
-      series: [{
-          type: 'column',
-          name: 'Attemp1',
-          data: [2, 3, 1, 1, 2]
-      }, {
-          type: 'column',
-          name: 'Attempt2',
-          data: [3, 4, 3, 2, 2]
-      }, {
-          type: 'column',
-          name: 'Attemp3',
-          data: [4, 5, 5, 3, 3]
-      }, ]
+
+      });
+
+
+  $('#indtopic1').highcharts({
+    title: {
+      text: 'Performance on Each Topic'
+    },
+    xAxis: {
+      categories: ['Topic1', 'Topic2', 'Topic3', 'Topic4', 'Topic5']
+    },
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    labels: {
+      items: [{
+        style: {
+          left: '50px',
+          top: '18px',
+          color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+        }
+      }]
+    },
+    credits: {
+      enabled: false
+    },
+    series: [{
+      type: 'column',
+      name: 'Attemp1',
+      data: [2, 3, 1, 1, 2]
+    }, {
+      type: 'column',
+      name: 'Attempt2',
+      data: [3, 4, 3, 2, 2]
+    }, {
+      type: 'column',
+      name: 'Attemp3',
+      data: [4, 5, 5, 3, 3]
+    }, ]
   });
 });
 
@@ -64,7 +173,7 @@ function showSlides(n) {
   }
 
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = "none";
   }
 
   slides[slideIndex-1].style.display = "block";
