@@ -28,7 +28,8 @@
  <script src="js/recommendedPage.js"></script>
 
   <!-- Johns's CSS files -->
- 
+<link rel="stylesheet" href="css/johnCss.css" type="text/css"/>
+
 
 
 
@@ -82,30 +83,34 @@
       
    
       
-   <div class="container-fluid" ng-controller = "MyCtrl"> <!-- START lecture panel -->
+<div class="container-fluid" ng-controller = "MyCtrl"> <!-- START lecture panel -->
 
-    
     <div class="row content">
+
       <div class="col-sm-2 text-center"></div>
+      
       <div class="col-sm-8">
-
         <h1 class=".sample-show-hide text-center">{{title}}</h2>
-        <h3 class=".sample-show-hide text-center">Not Sure what to take? That's okay, lets suggest some for you.</h3>
+       <!--  <h3 class=".sample-show-hide text-center">Not Sure what to take? That's okay, lets suggest some for you.</h3> -->
+
+      
 
 
-        <!-- 
+            <!-- 
 
           This div represents a list full of recommended courses.
           Once a course is chosen, the whole div will become hidden 
 
         -->
 
-        <div id= "recommendedList" class = "row well" ng-repeat = "course in recommendedCourses"> 
+        <div id= "recommendedList" class = "row well hideListAnimation " ng-repeat = "course in recommendedCourses" ng-show = "hideRecommendedList" ng-cloak> 
           <div class = "col-sm-2">{{course.title}}</div>
           <div class = "col-sm-6">{{course.description}}</div>
           <div class = "col-sm-4"> 
-              Match: {{course.match}} 
-              <button class = "btn btn-default"> Find More</button>
+              Match: {{course.match}} <br>
+              Likes: {{course.popularity}} <br>
+
+              <button class = "btn btn-default" ng-click = "currentCourse(course)"> Find More</button>
           </div>
         </div> 
 
@@ -115,22 +120,78 @@
           This div represents a specific recommended courses.
 
         -->
-        <div id = "currentCourse" ng-hide = "currentCourse">
-
-
+        <div id = "currentCourse" class = "row well hideCourseAnimation" ng-show = "hideCourse" ng-cloak>
+             <div class = "col-sm-3"> {{currentCourse.title}} </div>
+             <div class = "col-sm-9">
+             <div> {{currentCourse.description}} </div>
+                <button class = "btn btn-default" type="button" data-toggle="modal" data-target="#registerModal"> 
+                    Register For course
+                </button>
+                <button class = "btn btn-default" ng-click = "currentCourse()"> 
+                    Go Back to Recommended Page
+                </button>
+             </div>
+            
         </div>
 
 
 
+        <!-- 
+
+             Modal 
+
+        -->
+          <div id="registerModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Registration for {{currentCourse.title}}</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to register?</p>
+                  <p>Are you sure you want to register?</p>
+                  <p>Are you sure you want to register?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+     </div> 
 
 
 
-      </div>
+     <div class="col-sm-2 text-center"></div>
+
+
+   </div> <!-- END lecture body -->
+</div><!-- END lecture content Panel -->
+
+
+
       
 
 
-
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">Place sticky footer content here.</p>
+  </div>
+</footer>
 
 
 </body> 
+
+
+
+
+
+
 </html>
