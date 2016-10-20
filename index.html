@@ -224,14 +224,12 @@
                         </div>
                         <div class = "col-xs-12" id = "topicsCourse"> 
                            <div id = "courseCoverageLabel"> Course Coverage </div> 
-                           <div class = "panel panel-primary" ng-repeat = "lecture in currentCourse.lectures">
-                              <div class = "panel-heading">
-                                Lecture {{$index+1}}: 
-                              </div>
-                              <div class="panel-body">
-                                   {{lecture}}  
-                              </div>
-                            </div>
+                           <div class="list-group">
+                              <a class="list-group-item list-group-item-info" ng-repeat = "lecture in currentCourse.lectures">
+                                  <b>Lecture {{$index+1}}:</b> {{lecture}}  
+                              </a>
+                           </div>
+                          
                       
                         </div>    
                       </div>
