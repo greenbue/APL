@@ -42,6 +42,8 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
     		$scope.title = course.title;
 			$scope.currentCourse.title = course.title;
 			$scope.currentCourse.match = course.match;
+			$scope.currentCourse.lectures = course.lectures;
+			console.log($scope.currentCourse.lectures)
 			$scope.currentCourse.popularity = course.popularity;
 			$scope.currentCourse.permission = course.permission;
 			$scope.currentCourse.video = course.video;
@@ -56,11 +58,14 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	$scope.hideRecommendedList = true;
 
 
+
+
 	//Courses list
 	$scope.recommendedCourses = [
 	    {
 	    	title: "SWEN425",
-	    	match: '90%',
+	    	match: 90,
+	    	lectures: ['topic1','topic2', 'topic3', 'topic4'],
 	    	popularity: 1312,
 	    	permission: true,
 	    	video: 'http://www.youtube.com/embed/Lx7ycjC8qjE',
@@ -70,7 +75,8 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 
 	    {
 	    	title: "SWEN421", 
-	    	match: '85%',
+	    	match: 85,
+	    	lectures: ['topic1','topic2', 'topic3'],
 	    	popularity: 232,
 	    	permission: true,
 	    	video: 'http://player.vimeo.com/video/63534746',
@@ -80,7 +86,8 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 
 	    {
 	    	title: "SWEN999", 
-	    	match: '10%',
+	    	match: 60,
+	    	lectures: ['topic1','topic2', 'topic3', 'topic4', 'topic5'],
 	    	popularity: 13132,
 	    	permission: true,
 	    	video: 'https://player.vimeo.com/video/14396098',
@@ -118,7 +125,6 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	$scope.fakeKeyWords = ['These','are', 'my', 'keys']
 
 
-
 	//There's jQuery remove/add of a bootstrap icon. Not compatable with my stuff unfortunately, But easy to fix!
 	$scope.glyphicon = false;
 	$scope.glyphiconToggle = function(){
@@ -138,8 +144,6 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 }])
 
 
-
-
 //The Model
 .directive("model", ['$rootScope', '$filter', function($rootScope, $filter){
       return function (scope, element, attrs) {
@@ -151,6 +155,12 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 .filter('trusted', ['$sce', function ($sce) {
    return $sce.trustAsResourceUrl;
 }]);
+
+//for the fake match graphs...
+$(function(){
+    $(".bluecircle").percircle();
+    //console.log("?")
+});
 
 
 
