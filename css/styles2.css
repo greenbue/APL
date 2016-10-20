@@ -1,155 +1,185 @@
-.hideCourseAnimation {
-  transition: all linear 0.5s;
-}
-.hideCourseAnimation.ng-hide {
-  opacity: 0;
-}
-.hideCourseAnimation.ng-hide-remove{
-  transition: all linear 0.2s;
-}
-.hideCourseAnimation.ng-hide-add {
-  transition: all linear 0.2s;
-}
+/*
 
+	SASS variables
+
+*/
+.hideCourseAnimation {
+  transition: all linear 0.5s; }
+
+.hideCourseAnimation.ng-hide {
+  opacity: 0; }
+
+.hideCourseAnimation.ng-hide-remove {
+  transition: all linear 0.2s; }
+
+.hideCourseAnimation.ng-hide-add {
+  transition: all linear 0.2s; }
 
 .hideListAnimation {
-  transition: all linear 0.5s;
-}
+  transition: all linear 0.5s; }
+
 .hideListAnimation.ng-hide {
-  opacity: 0;
-}
-.hideListAnimation.ng-hide-remove{
-  transition: all linear 0.2s;
-}
+  opacity: 0; }
+
+.hideListAnimation.ng-hide-remove {
+  transition: all linear 0.2s; }
+
 .hideListAnimation.ng-hide-add {
-  transition: all linear 0.2s;
-}
+  transition: all linear 0.2s; }
 
 /*
 
 	These are for the lefthand panel in the recommended pages
 
 */
+.filterOption {
+  margin-bottom: 30px; }
 
-.filterOption{
-	margin-bottom: 30px;
-}
-
-.filterOption .filterLabel{
-	font-size: 14px;
-	font-weight: bold;
-	color: black;
-	margin-bottom: 5px;
-}
-
+.filterOption .filterLabel {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 5px; }
 
 /*
 
 	These are for the specific recommended pages
 
 */
-#recommendedMain{
-	/*padding-left: -30px;
-	padding-right: -30px;*/
-}
+#recommendedMain {
+  /*padding-left: -30px;
+  padding-right: -30px;*/ }
 
-#recommendedList{
-	color: black;
-}
+#recommendedList {
+  color: black; }
+  #recommendedList .panel-body {
+    display: flex;
+    align-items: center; }
 
-
+#recommendedLabel {
+  font-size: 24px;
+  font-weight: bold; }
 
 /*
 
 		These are for recommended course rows
 
 */
+.courseRow {
+  background-image: #31708f;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px; }
 
-.courseRow{
-	background-image: #31708f;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 15px;
-}
+#bluecircle {
+  margin: 0 auto !important;
+  float: none !important; }
+  #bluecircle span {
+    font-size: 20px;
+    margin-top: -14;
+    margin-left: 2px;
+    color: #307bbb; }
 
-.courseRow1{
-	font-weight: bold;
-	font-size: 18px;
-}
-.courseRow2{
-	/*border-right: 1px solid black;
-    border-left: 1px solid black;*/
-}
-.courseRow3{
+#matchLabel {
+  color: #307bbb;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px; }
 
-}
+.courseRow1 {
+  vertical-align: middle; }
 
-.rowLabel{
-	display: inline;
-	/*font-size: 18px;*/
-	font-weight: bold;
-}
+.courseHeader {
+  font-weight: bold;
+  font-size: 18px; }
 
-.courseRow3 button{
-	margin-top: 8px;
-}
+.courseRow2 {
+  border-left: 1.5px solid #31708f;
+  border-right: 1.5px solid #31708f;
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 10;
+  	/*border-right: 1px solid black;
+      border-left: 1px solid black;*/ }
 
+.courseRow3 {
+  vertical-align: middle; }
+
+.rowLabel {
+  display: inline;
+  /*font-size: 18px;*/
+  font-weight: bold; }
+
+.courseRow3 button {
+  margin-top: 8px; }
 
 /*
 
 		These are for specific recommeded courses
 
 */
+#currentCourse {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px; }
 
-#currentCourse{
-	margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 15px;
-}
-#titleCourse{
-	font-size: 30px;
-	font-weight: bold;
-}
+#titleCourse {
+  font-size: 30px;
+  font-weight: bold; }
 
+#videoCourse {
+  margin-top: 35px;
+  margin-bottom: 30px; }
 
-#videoCourse{
-	margin-top: 15px;
-	margin-bottom: 30px;
-}
+#descriptionCourse {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 30px; }
 
-#descriptionCourse{
-	padding-left: 30px;
-	padding-right: 30px;
-	margin-bottom: 30px;
-}
+#descriptionCourse {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 30px; }
 
-#descriptionCourse{
-	padding-left: 30px;
-	padding-right: 30px;
-	margin-bottom: 30px;
-}
+#topicsCourse {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 5px; }
+  #topicsCourse #courseCoverageLabel {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 30px; }
 
+/*
 
-
-
-
-
-
+	This is the panel for the modal that pops up when registering
+	By nesting we can restrict our styling further
+*/
+#registerModal .modal-header {
+  background-color: #d9edf7;
+  text-align: center; }
+  #registerModal .modal-header h4 {
+    font-weight: bold; }
+#registerModal .modal-body {
+  padding-right: 80px;
+  padding-left: 80px; }
+  #registerModal .modal-body #areYouSure {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; }
 
 /*
 	This is an attempted sticky footer:
 */
-
 /*html {
     position: relative;
     min-height: 100%;
 }*/
-
 /*body {
     margin-bottom: 250px; Height of the footer
 }
 */
-
 /*footer {
     position: absolute;
     bottom: 0;
@@ -157,3 +187,5 @@
     height: 200px; Example value
  }
 */
+
+/*# sourceMappingURL=styles2.css.map */

@@ -17,6 +17,8 @@
 
   <link rel="stylesheet" href="css/styles.css" type="text/css"/>
   <link rel="stylesheet" href="css/styles2.css" type="text/css"/>
+  <link rel="stylesheet" href="css/percircle.css" type="text/css"/>
+  <link rel="stylesheet" href="css/percircle-rtl.css" type="text/css"/>
   <script src="js/tab.js"></script>
   <script src="js/accordions.js"></script>
   <script src="js/lecture.js"></script>
@@ -25,6 +27,7 @@
   <script src="js/angular-route.min.js"></script>
   <script src="js/angular-filter.min.js"></script>
   <script src="js/angular-animate.min.js"></script>
+  <script src="js/percircle.js"></script>
   <script src="js/recommendedPage.js"></script>
 
 
@@ -143,7 +146,7 @@
                 <div class="panel panel-default" ng-repeat = "course in registeredCourses"> <!--Starts here for an accordion-->
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNew{{$index+1}}" ng-click = "glyphiconToggle()">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNew{{$index+1}}" ng-click = "glyphiconToggle($index)">
                         <span class="glyphicon" ng-class = "glyphiconClass()"></span>
                         {{course.title}}
                       </a>
@@ -170,28 +173,36 @@
             </div>
             <div id="recommended" class="tab-pane fade in">
               <strong><u>RECOMMENDED Courses</u></strong>
+             <!--  <div id = "recommendedLabel"> RECOMMENDED Courses </div> -->
               <div id="recommendedPageContainer" class="container-fluid">
                 <div class="row">
                   <div id = "recommendedMain" class="col-xs-12 col-sm-12">
                      <!-- This div represents a list full of recommended courses.
                         Once a course is chosen, the whole div will become hidden -->
                     <div id= "recommendedList" class = "panel panel-info courseRow row hideListAnimation " ng-repeat = "course in recommendedCourses | filter:{ permission: true}" ng-show = "hideRecommendedList" ng-cloak>
-                      <div class = "panel-heading text-center courseRow1">
+                      <div class = "panel-heading text-center courseHeader">
                         {{course.title}}
                       </div>
                       <div class = "panel-body">
-                        <div class = "col-xs-8 courseRow2">
-                        {{course.description| limitTo: 100}}{{course.description.length > 100 ? '...' : ''}}
+                        <div class = "col-xs-3">
+                          
+                               <div id="bluecircle" data-percent="{{course.match}}" class="bluecircle small">
+                                </div>
+                              <div id = "matchLabel">  Match! </div>
                         </div>
-                        <div class = "col-xs-4 courseRow3">
-                            <div class = "col-xs-12" >
-                               <div class = "rowLabel"> Match: </div> {{course.match}} <br>
-                               <div class = "rowLabel"> Likes: </div> {{course.popularity}}
-                            </div>
-                            <div class = "col-xs-12" >
-                                <button class = "btn btn-default" ng-click = "currentCourse(course)">  Find More
-                                </button>
-                            </div>
+                        <div class = "col-xs-6 courseRow2">
+                        {{course.description| limitTo: 160}}{{course.description.length > 160 ? '...' : ''}}
+                        </div>
+                        <div class = "col-xs-3 courseRow3 text-center">
+                                <div class = "col-xs-12, infoRow">
+                                   <div class = "rowLabel"><span class= "glyphicon glyphicon glyphicon-book"></span>  Lectures: </div> {{course.lectures.length}}<br>
+                                   <div class = "rowLabel"> <span class= "glyphicon glyphicon-thumbs-up"></span> Likes: 
+                                   </div> {{course.popularity}}
+                                </div>
+                                <div class = "col-xs-12 buttonRow" >
+                                    <button class = "btn btn-info" ng-click = "currentCourse(course)">  Find More
+                                    </button>
+                                </div>
                         </div>
                       </div>
                     </div>
@@ -211,21 +222,27 @@
                             {{currentCourse.description}}
                           </div>
                         </div>
-                        <div class = "col-xs-12" >
-                          <div class = "col-xs-6 text-left">
-                            Match: {{currentCourse.match}} <br>
-                            Likes: {{currentCourse.popularity}} <br>
-                          </div>
-                          <div class = "col-xs-6 text-right" id = "buttonsCourse">
-                            <button class = "btn btn-default" ng-click = "currentCourse()">
-                            Go Back
-                            </button>
-                            <button class = "btn btn-default" type="button" data-toggle="modal" data-target="#registerModal">
-                            Register For course
-                            </button>
-                          </div>
-                        </div>
+                        <div class = "col-xs-12" id = "topicsCourse"> 
+                           <div id = "courseCoverageLabel"> Course Coverage </div> 
+                           <div class="list-group">
+                              <a class="list-group-item list-group-item-info" ng-repeat = "lecture in currentCourse.lectures">
+                                  <b>Lecture {{$index+1}}:</b> {{lecture}}  
+                              </a>
+                           </div>
+                          
+                      
+                        </div>    
                       </div>
+                        <div class = "panel-footer">
+                           <div class = "text-right" id = "buttonsCourse">
+                                <button class = "btn btn-info" ng-click = "currentCourse()">
+                                Go Back
+                                </button>
+                                <button class = "btn btn-primary" type="button" data-toggle="modal" data-target="#registerModal">
+                                Register For course
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <!--Modal-->
                     <div id="registerModal" class="modal fade" role="dialog">
@@ -237,15 +254,22 @@
                             <h4 class="modal-title">Registration for {{currentCourse.title}}</h4>
                           </div>
                           <div class="modal-body">
-                            <p>
-                                Are you sure you want to register?
-
+                            <p id = "areYouSure">
+                                <span class = "glyphicon  glyphicon-exclamation-sign"> </span> Are you sure you want to register?
+                                <span class = "glyphicon  glyphicon-exclamation-sign"> </span>
+                            </p>
+                            <p id ="descriptionInModal">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             </p>
+                         <!--    <p id ="feeInModal">
+                                <b> Fees: </b>  <br>
+                                  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p> -->
+
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click = "currentCourse(); removeCourse()">Yes</button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click = "currentCourse(); removeCourse()">Activate</button>
                           </div>
                         </div>
                       </div>
