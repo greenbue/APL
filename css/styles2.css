@@ -1,0 +1,159 @@
+.hideCourseAnimation {
+  transition: all linear 0.5s;
+}
+.hideCourseAnimation.ng-hide {
+  opacity: 0;
+}
+.hideCourseAnimation.ng-hide-remove{
+  transition: all linear 0.2s;
+}
+.hideCourseAnimation.ng-hide-add {
+  transition: all linear 0.2s;
+}
+
+
+.hideListAnimation {
+  transition: all linear 0.5s;
+}
+.hideListAnimation.ng-hide {
+  opacity: 0;
+}
+.hideListAnimation.ng-hide-remove{
+  transition: all linear 0.2s;
+}
+.hideListAnimation.ng-hide-add {
+  transition: all linear 0.2s;
+}
+
+/*
+
+	These are for the lefthand panel in the recommended pages
+
+*/
+
+.filterOption{
+	margin-bottom: 30px;
+}
+
+.filterOption .filterLabel{
+	font-size: 14px;
+	font-weight: bold;
+	color: black;
+	margin-bottom: 5px;
+}
+
+
+/*
+
+	These are for the specific recommended pages
+
+*/
+#recommendedMain{
+	/*padding-left: -30px;
+	padding-right: -30px;*/
+}
+
+#recommendedList{
+	color: black;
+}
+
+
+
+/*
+
+		These are for recommended course rows
+
+*/
+
+.courseRow{
+	background-image: #31708f;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.courseRow1{
+	font-weight: bold;
+	font-size: 18px;
+}
+.courseRow2{
+	/*border-right: 1px solid black;
+    border-left: 1px solid black;*/
+}
+.courseRow3{
+
+}
+
+.rowLabel{
+	display: inline;
+	/*font-size: 18px;*/
+	font-weight: bold;
+}
+
+.courseRow3 button{
+	margin-top: 8px;
+}
+
+
+/*
+
+		These are for specific recommeded courses
+
+*/
+
+#currentCourse{
+	margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+#titleCourse{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+#videoCourse{
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+#descriptionCourse{
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-bottom: 30px;
+}
+
+#descriptionCourse{
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+/*
+	This is an attempted sticky footer:
+*/
+
+/*html {
+    position: relative;
+    min-height: 100%;
+}*/
+
+/*body {
+    margin-bottom: 250px; Height of the footer
+}
+*/
+
+/*footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px; Example value
+ }
+*/
