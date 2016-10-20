@@ -16,17 +16,14 @@
   <script src="js/lecture.js"></script>
   <script src="js/login.js"></script>
 
-
-
 <!-- START COPY THIS -->
 
-
- <script src="js/johnLibraries/angular.min.js"></script>
- <script src="js/johnLibraries/angular-route.min.js"></script>
- <script src="js/johnLibraries/angular-filter.min.js"></script>
- <script src="js/johnLibraries/angular-animate.min.js"></script>
- <script src="js/recommendedPage.js"></script>
- <link rel="stylesheet" href="css/johnCss.css" type="text/css"/>
+   <script src="js/johnLibraries/angular.min.js"></script>
+   <script src="js/johnLibraries/angular-route.min.js"></script>
+   <script src="js/johnLibraries/angular-filter.min.js"></script>
+   <script src="js/johnLibraries/angular-animate.min.js"></script>
+   <script src="js/recommendedPage.js"></script>
+   <link rel="stylesheet" href="css/johnCss.css" type="text/css"/>
 
 <!-- END COPY THIS -->
 
@@ -37,9 +34,6 @@
 <body ng-app = "myapp" ng-controller = "MyCtrl">
 
 <!-- END COPY THIS -->
-
-
-
 
   <div class="navbar navbar-inverse navbar-fixed-top"> 
     <div class="container-fluid">
@@ -122,14 +116,9 @@
       </div><!-- End of courses_title Div -->
       <div class="col-sm-9 col-md-9 box" id="courses_content"><!-- courses_content Div -->
         <div class="tab-content"><!-- Tab Content Div -->
-          
-
-
-
           <div id="active" class="tab-pane fade in active">
             <strong><u>ACTIVE Courses</u></strong>
             <div class="panel-group" id="accordion">
-
               <div class="panel panel-default"> <!--Starts here for an accordion-->
                 <div class="panel-heading">
                   <h4 class="panel-title">
@@ -157,16 +146,9 @@
                 </div>
               </div>  
             
-
-
-
           <!-- START COPY THIS -->
 
-  
               <div class="panel panel-default" ng-repeat = "course in registeredCourses"> <!--Starts here for an accordion-->
-
-
-
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNew{{$index+1}}" ng-click = "glyphiconToggle()">
@@ -175,14 +157,9 @@
                     </a>
                   </h4>
                 </div>
-
-
-
                 <div id="collapseNew{{$index+1}}" class="panel-collapse collapse">
                   <div class="panel-body">
-
                     {{course.description}}
-
                     <div class="progressrow">
                       <div class="progress progress-striped active pull-left" style="width: 500px; margin: 0px auto; height: 40px; margin-right:10px;">
                         <div id="progressbar" class="progress-bar progress-bar-success active" role="progressbar" style="width:00%;">
@@ -197,193 +174,129 @@
                   </div>
                 </div>
               </div> 
-            
-
            </div>
           </div>
 
           <!-- END COPY THIS -->
 
-
-
-
-
-
-
-
-
           <div id="recommended" class="tab-pane fade in">
             <strong><u>RECOMMENDED Courses</u></strong>
 
 
+              <!-- START COPY THIS -->
 
 
-<!-- START COPY THIS -->
+              <div id="recommendedPageContainer" class="container-fluid"> 
+                  <div class="row">
+                    <div id = "recommendedMain" class="col-xs-12 col-sm-12">
+                     <!-- 
 
+                        This div represents a list full of recommended courses.
+                        Once a course is chosen, the whole div will become hidden 
 
-<div id="recommendedPageContainer" class="container-fluid"> 
+                      -->
+                      <div id= "recommendedList" class = "panel panel-info courseRow row hideListAnimation " ng-repeat = "course in recommendedCourses | filter:{ permission: true}" ng-show = "hideRecommendedList" ng-cloak> 
+                        <div class = "panel-heading text-center courseRow1"> 
+                         {{course.title}}  </div>
+                        <div class = "panel-body">
+                              <div class = "col-xs-8 courseRow2">
+                              {{course.description| limitTo: 100}}{{course.description.length > 100 ? '...' : ''}}
+                              </div>
+                              <div class = "col-xs-4 courseRow3"> 
+                                  <div class = "col-xs-12" >   
+                                     <div class = "rowLabel"> Match: </div> {{course.match}} <br>
+                                     <div class = "rowLabel"> Likes: </div> {{course.popularity}} 
+                                  </div>                                  
+                                  <div class = "col-xs-12" >   
+                                      <button class = "btn btn-default" ng-click = "currentCourse(course)">  Find More
+                                      </button>
+                                  </div>   
+                              </div>
+                        </div>  
+                      </div> 
+                      <!-- 
 
-    <div class="row">
+                        This div represents a specific recommended courses.
 
-      <div id = "recommendedMain" class="col-xs-12 col-sm-12">
- 
-    
-       <!-- 
+                      -->
+                      <div id = "currentCourse" class = "panel panel-info row hideCourseAnimation" ng-show = "hideCourse" ng-cloak>
+                           <div class = "panel-heading col-xs-12 text-center" id = "titleCourse">
+                               {{currentCourse.title}} 
+                           </div>
+                           <div class = "panel-body">
+                               <div class = "col-xs-12 text-center" id = "videoCourse">
 
-          This div represents a list full of recommended courses.
-          Once a course is chosen, the whole div will become hidden 
+                                      <iframe width="420" height="315"
+                                      ng-src="{{currentCourse.video | trusted}}" frameborder="0" allowfullscreen>
+                                      </iframe>
 
-        -->
+                                </div>
+                               <div class = "col-xs-12" id = "descriptionCourse">
+                                 <div>
+                                   {{currentCourse.description}} 
+                                 </div>
+                               </div>
+                                <div class = "col-xs-12" >
+                                   <div class = "col-xs-6 text-left">
+                                     Match: {{currentCourse.match}} <br>
+                                     Likes: {{currentCourse.popularity}} <br>
+                                   </div>
+                                   <div class = "col-xs-6 text-right" id = "buttonsCourse">
+                                      <button class = "btn btn-default" ng-click = "currentCourse()"> 
+                                          Go Back
+                                      </button>
+                                      <button class = "btn btn-default" type="button" data-toggle="modal" data-target="#registerModal"> 
+                                          Register For course
+                                      </button>
+                                </div>                              
+                           </div>
+                           </div>                         
+                      </div>
+                      <!-- 
 
-        <div id= "recommendedList" class = "panel panel-info courseRow row hideListAnimation " ng-repeat = "course in recommendedCourses | filter:{ permission: true}" ng-show = "hideRecommendedList" ng-cloak> 
+                           Modal 
 
+                      -->
+                        <div id="registerModal" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
 
-          <div class = "panel-heading text-center courseRow1"> 
-           {{course.title}}  </div>
-          <div class = "panel-body">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Registration for {{currentCourse.title}}</h4>
+                              </div>
+                              <div class="modal-body">
+                                <p>
+                                    Are you sure you want to register?
 
-                <div class = "col-xs-8 courseRow2">
-                {{course.description| limitTo: 100}}{{course.description.length > 100 ? '...' : ''}}
-                </div>
-
-
-                <div class = "col-xs-4 courseRow3"> 
-                    <div class = "col-xs-12" >   
-                       <div class = "rowLabel"> Match: </div> {{course.match}} <br>
-                       <div class = "rowLabel"> Likes: </div> {{course.popularity}} 
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                </p>                             
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click = "currentCourse(); removeCourse()">Yes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                   </div> 
+                    <div ng-repeat="media in product.media">
+                      <div class="thumbnail">
+                        <div class="video-container">
+                          <iframe width="100%" ng-src="{{getIframeSrc(media.src)}}" frameborder="0 " allowfullscreen></iframe>
+                        </div>
+                      </div>
                     </div>
-                     
-                    <div class = "col-xs-12" >   
-                        <button class = "btn btn-default" ng-click = "currentCourse(course)">  Find More
-                        </button>
 
-                    </div>   
-
-                </div>
-          </div>  
-
-        </div> 
-
-
-        <!-- 
-
-          This div represents a specific recommended courses.
-
-        -->
-        <div id = "currentCourse" class = "panel panel-info row hideCourseAnimation" ng-show = "hideCourse" ng-cloak>
-
-
-             <div class = "panel-heading col-xs-12 text-center" id = "titleCourse">
-                 {{currentCourse.title}} 
-             </div>
-
-             <div class = "panel-body">
-                 <div class = "col-xs-12 text-center" id = "videoCourse">
-
-                        <iframe width="420" height="315"
-                        ng-src="{{currentCourse.video | trusted}}" frameborder="0" allowfullscreen>
-                        </iframe>
-
-                  </div>
-
-                 <div class = "col-xs-12" id = "descriptionCourse">
-                   <div>
-                     {{currentCourse.description}} 
-                   </div>
-                 </div>
-
-
-
-                  <div class = "col-xs-12" >
-                     <div class = "col-xs-6 text-left">
-                       Match: {{currentCourse.match}} <br>
-                       Likes: {{currentCourse.popularity}} <br>
-                     </div>
-
-                     <div class = "col-xs-6 text-right" id = "buttonsCourse">
-                        <button class = "btn btn-default" ng-click = "currentCourse()"> 
-                            Go Back
-                        </button>
-                        <button class = "btn btn-default" type="button" data-toggle="modal" data-target="#registerModal"> 
-                            Register For course
-                        </button>
-                  </div>
                 
-             </div>
-
-
-             </div>
-
-
-             
-            
-        </div>
-
-
-
-        <!-- 
-
-             Modal 
-
-        -->
-          <div id="registerModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Registration for {{currentCourse.title}}</h4>
-                </div>
-                <div class="modal-body">
-                  <p>
-                      Are you sure you want to register?
-
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                  </p>
-                  
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal" ng-click = "currentCourse(); removeCourse()">Yes</button>
-                </div>
+                 </div> 
               </div>
 
-            </div>
-          </div>
 
-
-     </div> 
-
-      <div ng-repeat="media in product.media">
-        <div class="thumbnail">
-          <div class="video-container">
-            <iframe width="100%" ng-src="{{getIframeSrc(media.src)}}" frameborder="0 " allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-
-  
-   </div> 
-</div>
-
-
-<!-- END COPY THIS -->
-
-
-
-
-
-
-
+              <!-- END COPY THIS -->
 
           </div>
-
-
-
-
-
-
           <div id="completed" class="tab-pane fade in">
             <strong><u>COMPLETED Courses</u></strong>
               <div id="tab_1"><table class="table muffin table-bordered table-hover margin-bottom0" style="border-collapse:collapse;">
