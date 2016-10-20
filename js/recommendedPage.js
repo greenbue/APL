@@ -32,23 +32,25 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 			//Animation probs...
            	$timeout(function (){
     			$scope.hideRecommendedList = !$scope.hideRecommendedList;
+    			//$(".bluecircle").percircle().toggle().toggle();
 			}, 180);
+
         }
         else{
         	$timeout(function (){
 				$scope.hideCourse = !$scope.hideCourse;
+				//$(".bluecircle").percircle().one();
 			}, 180);
     		$scope.hideRecommendedList = !$scope.hideRecommendedList;
     		$scope.title = course.title;
 			$scope.currentCourse.title = course.title;
 			$scope.currentCourse.match = course.match;
 			$scope.currentCourse.lectures = course.lectures;
-			console.log($scope.currentCourse.lectures)
 			$scope.currentCourse.popularity = course.popularity;
 			$scope.currentCourse.permission = course.permission;
 			$scope.currentCourse.video = course.video;
 			$scope.currentCourse.description = course.description;
-        }  
+        }
 	}
 
 
@@ -65,7 +67,7 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	    {
 	    	title: "SWEN425",
 	    	match: 90,
-	    	lectures: ['topic1','topic2', 'topic3', 'topic4'],
+	    	lectures: ['commodo consequat. Duis aute irure dolor in reprehenderit','ription for Swen425) Lorem ipsum ', 'voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'sunt in culpa qui officia deserunt mollit anim id est laborum'],
 	    	popularity: 1312,
 	    	permission: true,
 	    	video: 'http://www.youtube.com/embed/Lx7ycjC8qjE',
@@ -76,7 +78,7 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	    {
 	    	title: "SWEN421", 
 	    	match: 85,
-	    	lectures: ['topic1','topic2', 'topic3'],
+	    	lectures: ['commodo consequat. Duis aute irure dolor in reprehenderit','ription for Swen425) Lorem ipsum ', 'voluptate velit esse cillum dolore eu fugiat nulla pariatur.'],
 	    	popularity: 232,
 	    	permission: true,
 	    	video: 'http://player.vimeo.com/video/63534746',
@@ -87,7 +89,7 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	    {
 	    	title: "SWEN999", 
 	    	match: 60,
-	    	lectures: ['topic1','topic2', 'topic3', 'topic4', 'topic5'],
+	    	lectures: ['commodo consequat. Duis aute irure dolor in reprehenderit','ription for Swen425) Lorem ipsum ', 'voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'sunt in culpa qui officia deserunt mollit anim id est laborum', 'thats a lot of lorem ispum i tell you what'],
 	    	popularity: 13132,
 	    	permission: true,
 	    	video: 'https://player.vimeo.com/video/14396098',
@@ -141,6 +143,7 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	}
 
 
+
 }])
 
 
@@ -160,6 +163,7 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 $(function(){
     $(".bluecircle").percircle();
     //console.log("?")
+
 });
 
 

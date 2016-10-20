@@ -197,6 +197,16 @@ $textColor: #31708f;
 	margin-bottom: 30px;
 }
 
+#topicsCourse{
+	padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 5px;
+    #courseCoverageLabel{
+    	font-weight: bold;
+    	font-size: 18px;
+    	margin-bottom: 30px;
+    }
+}
 
 /*
 
@@ -218,6 +228,7 @@ $textColor: #31708f;
     	#areYouSure{
     		font-size: 18px;
     		font-weight: bold;
+    		text-align: center;
     	}
     	#descriptionInModal{
 
