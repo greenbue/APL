@@ -257,3 +257,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', end
 .login-form {
   margin: 100px auto;
 }
+
+/*** ***/
+
+.statsdiv h2 {
+  font-size: 1em;
+}

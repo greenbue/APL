@@ -54,58 +54,57 @@ $('#Stats1').on("shown.bs.collapse", function(){
   });
 
 
-      $('#understanding1').highcharts({
+  $('#understanding1').highcharts({
 
-          chart: {
-              polar: true,
-              type: 'line'
-          },
+      chart: {
+          polar: true,
+          type: 'line'
+      },
 
-          title: {
-              text: 'Understanding',
-              x: -80
-          },
+      title: {
+          text: 'Understanding'
+      },
 
-          pane: {
-              size: '80%'
-          },
-          credits: {
-            enabled: false
-          },
-          xAxis: {
-              categories: ['Topic1', 'Topic2', 'Topic3', 'Topic4','Topic5', 'Overall'],
-              tickmarkPlacement: 'on',
-              lineWidth: 0
-          },
+      pane: {
+          size: '65%'
+      },
+      credits: {
+        enabled: false
+      },
+      xAxis: {
+          categories: ['Topic1', 'Topic2', 'Topic3', 'Topic4','Topic5', 'Overall'],
+          tickmarkPlacement: 'on',
+          lineWidth: 0
+      },
 
-          yAxis: {
-              gridLineInterpolation: 'polygon',
-              lineWidth: 0,
-              min: 0
-          },
+      yAxis: {
+          gridLineInterpolation: 'polygon',
+          lineWidth: 0,
+          min: 0
+      },
 
-          tooltip: {
-              shared: true,
-              pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
-          },
+      tooltip: {
+          shared: true,
+          pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+      },
 
-          series: [{
-              name: 'Attempt1',
-              data: [20, 35, 25, 10, 10, 20],
-              pointPlacement: 'on'
-          },
-          {
-              name: 'Attempt2',
-              data: [30, 40, 60, 60, 50, 25],
-              pointPlacement: 'on'
-          },
-          {
-              name: 'Attempt2',
-              data: [40, 50, 70, 75, 65, 30],
-              pointPlacement: 'on'
-          }]
+      series: [{
+          name: 'Attempt1',
+          data: [20, 35, 25, 10, 10, 20],
+          pointPlacement: 'on'
+      },
+      {
+          name: 'Attempt2',
+          data: [30, 40, 60, 60, 50, 25],
+          pointPlacement: 'on'
+      },
+      {
+          name: 'Attempt2',
+          data: [40, 50, 70, 75, 65, 30],
+          pointPlacement: 'on'
+      }]
 
-      });
+  });
 
 
   $('#indtopic1').highcharts({
@@ -123,8 +122,6 @@ $('#Stats1').on("shown.bs.collapse", function(){
     labels: {
       items: [{
         style: {
-          left: '50px',
-          top: '18px',
           color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
         }
       }]
