@@ -213,7 +213,7 @@ function submitAnswers() {
   for (i = 0; i < target_answers.length; i++) {
     answers[i] = document.getElementById("A" + (i+1));
     
-    if (answers[i].value == target_answers[i]) {
+    if (answers[i].value.toUpperCase() == target_answers[i].toUpperCase()) {
       answers[i].className += " correct-answer";
       correct++;
     } else {
