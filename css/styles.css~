@@ -88,14 +88,6 @@
   background-color: #dff0d8;
 }
 
-.correct-text {
-  color: #dff0d8;
-}
-
-.wrong-text {
-  color: #f2dede;
-}
-
 /**************************************/
 
 

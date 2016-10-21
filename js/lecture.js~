@@ -141,7 +141,7 @@ function loadLecturePage(page,titles) {
 
   video_title = document.getElementById("lecture_video_title");
   video_title.innerHTML = "Lecture " + page + ": " + lecture_title;
-  //document.getElementById("lecture_video").setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ");
+  document.getElementById("lecture_video").setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ");
 }
 
 function loadQuestions(page,titles,questionData) {

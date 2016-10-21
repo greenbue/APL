@@ -20,6 +20,16 @@ lecture_course_questions['TEST123E5'] = [
   "Example Question 6"
 ];
 
+lecture_course_answers = {};
+lecture_course_answers['TEST123A5'] = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6"
+];
+
 // Course + "R" + lecture_number
 lecture_course_readings = {};
 lecture_course_readings['TEST123R5'] = [
