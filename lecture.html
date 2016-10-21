@@ -20,33 +20,26 @@
 
 </head><!-- END Header -->
 <body onload="loadCourse()">
-  <div class="navbar navbar-inverse navbar-fixed-top"><!-- START Navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">
-          Advanced Personalised Learning (APL)
-        </a>
-      </div>
-
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a class="navbar-brand" href="welcome.html">
+              Advanced Personalised Learning (APL)
+            </a>
+          </li>
           <li class="active"><a id="home_tab" href="index.html">Home</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a id="login_tab" href="login.html">Login</a></li>
-          <li><a id="logout_tab" href="login.html" onClick=
-"logout();">Logout</a></li>
+          <li><a id="logout_tab" href="login.html" onClick="logout();">Logout</a></li>
         </ul>
 
       </div>
     </div>
-  </div><!-- END Navbar -->
+  </div><!-- END COPY THIS -->
   <div class="container-fluid hidden" id="lecture_root"><!-- START lecture panel -->
     <div class="row content">
       <div class="col-sm-2 text-center"></div>
@@ -95,10 +88,10 @@
                 Next Lecture
                 <i class="fa fa-book" aria-hidden="true"></i></a>
               </div>
-              
-              
-              
-              
+
+
+
+
             </div>
           </div> <!-- END tabs -->
         </div> <!-- END lecture body -->
@@ -107,15 +100,15 @@
       <div class="col-sm-2 text-center"></div>
     </div>
   </div><!-- END lecture panel -->
-  
-  
+
+
   <div class="a-popup" id="lecture_achievement">
-      <span><h4 class="a-title"> Achievement Unlocked! </h4></span>    
+      <span><h4 class="a-title"> Achievement Unlocked! </h4></span>
       <div class="a-details">
       <img src="images/badges/MoH.png" alt="Medal of Honour" class="a-img">
       <h4 class="a-txt">100% Accuracy!<h4>
       </div>
   </div>
-  
+
 </body>
 </html>
