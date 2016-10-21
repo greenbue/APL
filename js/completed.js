@@ -89,18 +89,70 @@ $('#Stats1').on("shown.bs.collapse", function(){
       },
 
       series: [{
-          name: 'Attempt1',
+          name: 'Attempt 1',
           data: [20, 35, 25, 10, 10, 20],
           pointPlacement: 'on'
       },
       {
-          name: 'Attempt2',
+          name: 'Attempt 2',
           data: [30, 40, 60, 60, 50, 25],
           pointPlacement: 'on'
       },
       {
-          name: 'Attempt2',
+          name: 'Attempt 3',
           data: [40, 50, 70, 75, 65, 30],
+          pointPlacement: 'on'
+      }]
+
+  });
+
+  $('#attempts1').highcharts({
+
+      chart: {
+          polar: true,
+          type: 'line'
+      },
+
+      title: {
+          text: 'Understanding'
+      },
+
+      pane: {
+          size: '65%'
+      },
+      credits: {
+        enabled: false
+      },
+      xAxis: {
+          categories: ['Topic1', 'Topic2', 'Topic3', 'Topic4','Topic5', 'Average'],
+          tickmarkPlacement: 'on',
+          lineWidth: 0
+      },
+
+      yAxis: {
+          gridLineInterpolation: 'polygon',
+          lineWidth: 0,
+          min: 0
+      },
+
+      tooltip: {
+          shared: true,
+          pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+      },
+
+      series: [{
+          name: 'Attempt 1',
+          data: [10, 11, 12, 13, 14, 12],
+          pointPlacement: 'on'
+      },
+      {
+          name: 'Attempt 2',
+          data: [9, 9, 9, 9, 9, 9],
+          pointPlacement: 'on'
+      },
+      {
+          name: 'Attempt 3',
+          data: [5, 6, 7, 8, 9, 7],
           pointPlacement: 'on'
       }]
 
