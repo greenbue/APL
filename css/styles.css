@@ -146,6 +146,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', end
 
 /* Slideshow container */
 .badgecontainer {
+  padding-top: 15px;
   max-width: 1000px;
   position: relative;
   margin: auto;
@@ -155,7 +156,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', end
   color: #ffffff;
   font-size: 12px;
   padding: 8px 12px;
-  position: absolute;
   top: 0;
 }
 
