@@ -1,5 +1,8 @@
 var lecture_active_page;
 var lecture_course;
+var lecture_submit_current;
+
+var lecture_submitted = {};
 
 function loadLecture(t) {
   window.location = "lecture.html?c=" + t;
@@ -42,6 +45,7 @@ function loadCourse() {
     has_questions = lecture_course_questions[course + "E" + lecture_active_page];
     loadQuestions(lecture_active_page,has_lectures,has_questions);
     loadReading(lecture_active_page,"Lecture " + lecture_active_page + ": " + has_lectures[(lecture_active_page-1)]);
+    
   }
 
   //Unhide lecture panel when everything has been setup.
@@ -64,7 +68,7 @@ function setPagination(courseInfo) {
       li.className += " active";
     }
     a = document.createElement("a");
-    a.addEventListener('click',changeLecturePage);
+    a.addEventListener('click',changeLecturePageFromButton);
     a.className += " no-text-cursor";
     node = document.createTextNode(i);
     a.appendChild(node);
@@ -86,22 +90,50 @@ function changeLectureTab(tabNum) {
 
 }
 
+
+function changeLecturePageFromButton() {
+	className = this.parentNode.className;
+   if (className && className.includes("disabled")) { return; }
+   pageNum = Number(this.innerHTML);
+   changeLecturePage(pageNum);
+}
+
 //Pages are lecture 1, lecture 2 etc
-function changeLecturePage() {
-  className = this.parentNode.className;
-  if (className && className.includes("disabled")) { return; }
-  pageNum = this.innerHTML;
+function changeLecturePage(id) {
+  var pageNum = 0;
+  if (id) {
+  	 pageNum = id;
+  	 current = document.getElementById("lecture_page_button" + pageNum);
+  	 if (current) {
+      current.className += " active";
+  	 } else {
+      //End of course??
+      //TODO      
+      
+  	 }
+  }
+  
+  
+  
+  if (pageNum == lecture_active_page) { return; }
   console.log("Change to lecture " + pageNum);
   old = document.getElementById("lecture_page_button" + lecture_active_page);
   old.className = old.className.replace(" active", "");
   lecture_active_page = pageNum;
-  this.parentNode.className += " active";
+  
   titles = lecture_course_titles[lecture_course];
   questions = lecture_course_questions[lecture_course + "E" + pageNum];
   loadLecturePage(pageNum,lecture_course_titles[lecture_course]);
   loadQuestions(pageNum,titles,questions);
   loadReading(pageNum,"Lecture " + lecture_active_page + ": " + titles[(pageNum-1)]);
-  //loadReading(titles[lecture_active_page-1],lecture_course + "r" + (lecture_active_page-1) + ".html");
+  next = document.getElementById("lecture_next");
+  if (!next.className.includes("hidden")) {
+    next.className += " hidden";
+    next.setAttribute("onClick", "");
+  }
+  //lecture_submitted = false;
+  lecture_submit_current = 0;
+  removeScore();
 }
 
 function loadLecturePage(page,titles) {
@@ -109,19 +141,32 @@ function loadLecturePage(page,titles) {
 
   video_title = document.getElementById("lecture_video_title");
   video_title.innerHTML = "Lecture " + page + ": " + lecture_title;
-  document.getElementById("lecture_video").setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ");
+  //document.getElementById("lecture_video").setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ");
 }
 
 function loadQuestions(page,titles,questionData) {
   qTitle = document.getElementById("lecture_questions_title");
   root = document.getElementById("question_pane");
   qDiv = document.getElementById("qDiv");
+  last = document.getElementById("lecture_submit");
+  if (!last.className.includes("hidden")) {
+    last.className += " hidden";
+  }
   if (qDiv) {
     root.removeChild(qDiv);
   }
   if (!questionData || !questionData.constructor === Array) {
     qTitle.innerHTML = "Could not find question data for Lecture " + page + ": " + titles[page-1];
   } else {
+    if (lecture_submitted[lecture_active_page-1]) {
+  	   if (!lecture_submit_current) {
+  	     qTitle.innerHTML = "You got " + (lecture_submitted[lecture_active_page-1]-1) + " correct for this exercise.";
+  	   }
+  	
+  	  return;
+    }  	
+  	 last.className = last.className.replace(" hidden", "");
+  	 
     qTitle.innerHTML = "Questions on Lecture " + page + ": " + titles[page-1];
 
     qDiv = document.createElement("div");
@@ -141,7 +186,7 @@ function loadQuestions(page,titles,questionData) {
       div.appendChild(a);
       qDiv.appendChild(div);
     }
-    root.appendChild(qDiv);
+    root.insertBefore(qDiv,last);
   }
 }
 
@@ -157,13 +202,82 @@ function loadReading(pageNum,title) {
   } else {
     page.innerHTML = reading;
   }
-  //page.setAttribute("src", url);
 }
 
-function submitAnswers(re) {
-  //TODO
-  //Do stuff when answers to current questions are submitted
+function submitAnswers() {
+  if (lecture_submitted[lecture_active_page-1]) {
+  	return;
+  }
+  target_answers = lecture_course_answers[lecture_course + "A" + lecture_active_page];
+  answers = [];
+  correct = 0;
+  for (i = 0; i < target_answers.length; i++) {
+    answers[i] = document.getElementById("A" + (i+1));
+    
+    if (answers[i].value == target_answers[i]) {
+      answers[i].className += " correct-answer";
+      correct++;
+    } else {
+      answers[i].className += " wrong-answer";
+      a = document.createElement("input");
+      a.setAttribute("type", "text");
+      a.setAttribute("disabled", "true");
+      a.className = "form-control no-text-cursor";
+      a.value = "The correct answer: " + target_answers[i];
+      answers[i].parentNode.appendChild(a);
+    }
+  }
+
+	
+  root = document.getElementById("question_pane");
+  p = document.createElement("p");
+  p.setAttribute("id","lecture_score");
+  ptxt = document.createTextNode("You got " + correct + " out of " + answers.length + " correct.");    
+  p.appendChild(ptxt);
+  p.className = "text-center";
+  root.insertBefore(p,document.getElementById("lecture_submit"));
+  if (correct >= 0.75 * answers.length) {
+    p.className += " correct-answer";
+  } else if (correct <= 0.25 * answers.length) {
+  	 p.className += " wrong-answer";
+  }
+  
+  
+  
+  lecture_submitted[lecture_active_page-1] = (correct + 1);
+
+
+  //Check achievs + do stuff
+
+
+
+  //Enable next lecture
+  next = document.getElementById("lecture_next");
+  next.className = next.className.replace(" hidden", "");
+  next.setAttribute("onClick", "nextLecture()");
+  next_page = document.getElementById("lecture_page_button" + (lecture_active_page+1));
+  next_page.className = next_page.className.replace("disabled", "");
+  next_page.setAttribute("title", "");
+  lecture_submit_current = 1;
+
 }
 
+function removeScore() {
+  root = document.getElementById("question_pane");
+  if (root) {
+  	 score = document.getElementById("lecture_score");
+  	 if (score) {
+  	 	root.removeChild(score);
+    }
+  }
+}
+
+
+function nextLecture() {
+  removeScore();
+	
+	
+  changeLecturePage((lecture_active_page + 1));
+}
 
 
