@@ -97,6 +97,43 @@
   color: #f2dede;
 }
 
+.a-popup{
+  background-color: white;
+  border: solid 5px black;
+  border-bottom: solid 5px white;
+  
+  height: 150px;
+  position: fixed;
+  right: 0px;
+  bottom: -150px;
+}
+
+.a-title{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.a-img{
+  height: 100%;
+  display:inline;
+  width: 30%;
+  margin-left: 5px;
+}
+
+.a-txt{  
+  display:inline;
+  width: 70%;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.a-details {
+  height: 100px;
+  top: 20px;
+}
+
+
 /**************************************/
 
 
