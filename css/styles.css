@@ -101,7 +101,7 @@
   background-color: white;
   border: solid 5px black;
   border-bottom: solid 5px white;
-  
+
   height: 150px;
   position: fixed;
   right: 0px;
@@ -121,7 +121,7 @@
   margin-left: 5px;
 }
 
-.a-txt{  
+.a-txt{
   display:inline;
   width: 70%;
   text-align: center;
@@ -318,4 +318,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', end
 
 .statsdiv h2 {
   font-size: 1em;
+}
+
+
+.badges-modal {
+  overflow: scroll;
 }
