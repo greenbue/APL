@@ -108,7 +108,7 @@
                                 <td align="center" style="vertical-align:middle">Completed the "Basic Algebra Course"!</td>
                                 <td align="center"><img src="images/achievements/algebra.gif" style="width:45%"></td>
                                 <td align="center" style="vertical-align:middle">22/10/2016</td>
-                                
+
                               </tr>
                               <tr>
                                 <td align="center" style="vertical-align:middle">Studied for 2 days in a row!</td>
@@ -116,7 +116,7 @@
                                 <td align="center" style="vertical-align:middle">14/10/2016</td>
                               </tr>
                               <tr>
-                                <td align="center" style="vertical-align:middle">Completed 5 courses!</td>
+                                <td align="center" style="vertical-align:middle">Completed 3 courses!</td>
                                 <td align="center"><img src="images/achievements/5.jpg" style="width:45%"></td>
                                 <td align="center" style="vertical-align:middle">30/06/2016</td>
                               </tr>
@@ -138,7 +138,7 @@
                                 <td align="center" style="vertical-align:middle">MATH141 - Medal of Honor</td>
                                 <td align="center"><img src="images/badges/MoH.png" style="width:45%"></td>
                                 <td align="center" style="vertical-align:middle">22/05/2016</td>
-                                
+
                               </tr>
                               <tr>
                                 <td align="center" style="vertical-align:middle">MATH141 - Defence Medal</td>
@@ -151,7 +151,7 @@
                       </div>
                     </div>
 
-                    
+
                     <!-- <div class="text">Medal of Honor</div> -->
                   </div>
                   <div class="modal-footer">
@@ -170,7 +170,7 @@
               Earned a badge for studying 2 days in a row!
             </li>
             <li>
-              Earned a badge for completing 5 courses!
+              Earned a badge for completing 3 courses!
             </li>
           </ul>
         </div>
@@ -208,7 +208,7 @@
                   <div class="panel-heading">
                     <h4 class="panel-title text-center">
                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-        
+
                         COMP 425 - Computational Logic
                       </a>
                     </h4>
@@ -274,7 +274,7 @@
                       <div id="collapse{{$index}}" class="panel-collapse in">
                           <div class = "panel-body">
                             <div class = "col-xs-3">
-                              
+
                                    <div id="bluecircle" data-percent="{{course.match}}" class="bluecircle small">
                                     </div>
                                   <div id = "matchLabel">  Match! </div>
@@ -285,7 +285,7 @@
                             <div class = "col-xs-3 courseRow3 text-center">
                                     <div class = "col-xs-12, infoRow">
                                        <div class = "rowLabel"><span class= "glyphicon glyphicon glyphicon-book"></span>  Lectures: </div> {{course.lectures.length}}<br>
-                                       <div class = "rowLabel"> <span class= "glyphicon glyphicon-thumbs-up"></span> Likes: 
+                                       <div class = "rowLabel"> <span class= "glyphicon glyphicon-thumbs-up"></span> Likes:
                                        </div> {{course.popularity}}
                                     </div>
                                     <div class = "col-xs-12 buttonRow" >
@@ -314,14 +314,14 @@
                             {{currentCourse.description}}
                           </div>
                         </div>
-                        <div class = "col-xs-12" id = "topicsCourse"> 
-                           <div id = "courseCoverageLabel"> Course Summary </div> 
+                        <div class = "col-xs-12" id = "topicsCourse">
+                           <div id = "courseCoverageLabel"> Course Summary </div>
                            <div class="list-group">
                               <a class="list-group-item list-group-item-info" ng-repeat = "lecture in currentCourse.lectures">
-                                  <b>Lecture {{$index+1}}:</b> {{lecture}}  
+                                  <b>Lecture {{$index+1}}:</b> {{lecture}}
                               </a>
-                           </div>                      
-                        </div>    
+                           </div>
+                        </div>
                       </div>
                         <div class = "panel-footer">
                            <div class = "text-right" id = "buttonsCourse">
