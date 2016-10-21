@@ -3,6 +3,7 @@ var lecture_course;
 var lecture_submit_current;
 
 var lecture_submitted = {};
+var animated = false;
 
 function loadLecture(t) {
   window.location = "lecture.html?c=" + t;
@@ -37,8 +38,7 @@ function loadCourse() {
 
   //Setup lecture page
   if (has_lectures) {
-    setTitle(course);
-    //TODO - Need some way to set this, probably a value in lecture_data.
+    setTitle(course);    
     activePage = 1;
     setPagination(lecture_course_details[course]);
     loadLecturePage(lecture_active_page,has_lectures);
@@ -108,8 +108,7 @@ function changeLecturePage(id) {
       current.className += " active";
   	 } else {
       //End of course??
-      //TODO      
-      
+      return;
   	 }
   }
   
@@ -248,7 +247,11 @@ function submitAnswers() {
 
 
   //Check achievs + do stuff
-
+  if (correct == answers.length && !animated) {
+    animated = true;
+    animateAchievement();
+    
+  }
 
 
   //Enable next lecture
@@ -280,4 +283,31 @@ function nextLecture() {
   changeLecturePage((lecture_active_page + 1));
 }
 
+function animateAchievement() {
+  popup = document.getElementById("lecture_achievement");
+  anim = setInterval(move,1);
+  pos = -150;
+  down = false;
+  count = 0;
+  function move() {
+    if (pos == -151) {
+      clearInterval(anim);
+    } else if (pos  == 0) {
+      if (count < 1000) {
+        count++;
+        return;
+      } else {
+        down = true;
+      }
+      down = true;
+    }
+    
+    if (!down) {
+      pos++;
+    } else {
+      pos--;
+    }
+    popup.style.bottom = pos + "px";
+  }
+}
 

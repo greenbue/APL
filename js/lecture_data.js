@@ -16,7 +16,11 @@ lecture_course_titles['COMP425'] = ["Title1","Title2","Title3","Propositional Lo
 lecture_course_questions = {};
 lecture_course_questions['TEST123E5'] = [
   "Example Question 1",
-  "Example Question 2"
+  "Example Question 2",
+  "Example Question 3",
+  "Example Question 4",
+  "Example Question 5",
+  "Example Question 6"
 ];
 lecture_course_questions['SWEN425E1'] = [
   "How does Factory Method promote loosely coupled code?",
