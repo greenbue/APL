@@ -114,7 +114,7 @@ $('#Stats1').on("shown.bs.collapse", function(){
       },
 
       title: {
-          text: 'Understanding'
+          text: 'Attempts - Average Time'
       },
 
       pane: {
