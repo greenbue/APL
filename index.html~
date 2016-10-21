@@ -256,7 +256,7 @@
                                        </div> {{course.popularity}}
                                     </div>
                                     <div class = "col-xs-12 buttonRow" >
-                                        <button class = "btn btn-info" ng-click = "currentCourse(course)">  More Info
+                                        <button class = "btn btn-info" ng-click = "currentCourse(course)">  Find More
                                         </button>
                                     </div>
                             </div>
