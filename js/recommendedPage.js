@@ -65,7 +65,7 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	//Courses list
 	$scope.recommendedCourses = [
 	    {
-	    	title: "SWEN425",
+	    	title: "SWEN425 – Design Patterns",
 	    	match: 90,
 	    	lectures: ['commodo consequat. Duis aute irure dolor in reprehenderit','ription for Swen425) Lorem ipsum ', 'voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'sunt in culpa qui officia deserunt mollit anim id est laborum'],
 	    	popularity: 1312,
@@ -76,7 +76,7 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 	    },
 
 	    {
-	    	title: "SWEN421", 
+	    	title: "SWEN421 - Formal Software Engineering", 
 	    	match: 85,
 	    	lectures: ['commodo consequat. Duis aute irure dolor in reprehenderit','ription for Swen425) Lorem ipsum ', 'voluptate velit esse cillum dolore eu fugiat nulla pariatur.'],
 	    	popularity: 232,
@@ -87,7 +87,7 @@ angular.module("myapp", ['angular.filter', 'ngRoute', 'ngAnimate'])
 
 
 	    {
-	    	title: "SWEN999", 
+	    	title: "SWEN221 - Software Development", 
 	    	match: 60,
 	    	lectures: ['commodo consequat. Duis aute irure dolor in reprehenderit','ription for Swen425) Lorem ipsum ', 'voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'sunt in culpa qui officia deserunt mollit anim id est laborum', 'thats a lot of lorem ispum i tell you what'],
 	    	popularity: 13132,

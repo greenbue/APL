@@ -117,11 +117,11 @@
             <div id="active" class="tab-pane fade in active">
               <strong><u>ACTIVE Courses</u></strong>
               <div class="panel-group" id="accordion">
-                <div class="panel panel-default"> <!--Starts here for an accordion-->
+                <div class="panel panel-primary"> <!--Starts here for an accordion-->
                   <div class="panel-heading">
-                    <h4 class="panel-title">
+                    <h4 class="panel-title text-center">
                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                        <span class="glyphicon glyphicon-minus"></span>
+        
                         COMP 425 - Computational Logic
                       </a>
                     </h4>
@@ -143,11 +143,10 @@
                     </div>
                   </div>
                 </div> <!-- COMP 425 Panel -->
-                <div class="panel panel-default" ng-repeat = "course in registeredCourses"> <!--Starts here for an accordion-->
-                  <div class="panel-heading">
+                <div class="panel panel-primary" ng-repeat = "course in registeredCourses"> <!--Starts here for an accordion-->
+                  <div class="panel-heading text-center">
                     <h4 class="panel-title">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNew{{$index+1}}" ng-click = "glyphiconToggle($index)">
-                        <span class="glyphicon" ng-class = "glyphiconClass()"></span>
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNew{{$index+1}}">
                         {{course.title}}
                       </a>
                     </h4>
@@ -177,35 +176,41 @@
               <div id="recommendedPageContainer" class="container-fluid">
                 <div class="row">
                   <div id = "recommendedMain" class="col-xs-12 col-sm-12">
+
+
                      <!-- This div represents a list full of recommended courses.
                         Once a course is chosen, the whole div will become hidden -->
                     <div id= "recommendedList" class = "panel panel-info courseRow row hideListAnimation " ng-repeat = "course in recommendedCourses | filter:{ permission: true}" ng-show = "hideRecommendedList" ng-cloak>
                       <div class = "panel-heading text-center courseHeader">
-                        {{course.title}}
+                        <a data-toggle="collapse" href="#collapse{{$index}}" >{{course.title}} </a>
                       </div>
-                      <div class = "panel-body">
-                        <div class = "col-xs-3">
-                          
-                               <div id="bluecircle" data-percent="{{course.match}}" class="bluecircle small">
-                                </div>
-                              <div id = "matchLabel">  Match! </div>
+                      <div id="collapse{{$index}}" class="panel-collapse in">
+                          <div class = "panel-body">
+                            <div class = "col-xs-3">
+                              
+                                   <div id="bluecircle" data-percent="{{course.match}}" class="bluecircle small">
+                                    </div>
+                                  <div id = "matchLabel">  Match! </div>
+                            </div>
+                            <div class = "col-xs-6 courseRow2">
+                            {{course.description| limitTo: 160}}{{course.description.length > 160 ? '...' : ''}}
+                            </div>
+                            <div class = "col-xs-3 courseRow3 text-center">
+                                    <div class = "col-xs-12, infoRow">
+                                       <div class = "rowLabel"><span class= "glyphicon glyphicon glyphicon-book"></span>  Lectures: </div> {{course.lectures.length}}<br>
+                                       <div class = "rowLabel"> <span class= "glyphicon glyphicon-thumbs-up"></span> Likes: 
+                                       </div> {{course.popularity}}
+                                    </div>
+                                    <div class = "col-xs-12 buttonRow" >
+                                        <button class = "btn btn-info" ng-click = "currentCourse(course)">  Find More
+                                        </button>
+                                    </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class = "col-xs-6 courseRow2">
-                        {{course.description| limitTo: 160}}{{course.description.length > 160 ? '...' : ''}}
-                        </div>
-                        <div class = "col-xs-3 courseRow3 text-center">
-                                <div class = "col-xs-12, infoRow">
-                                   <div class = "rowLabel"><span class= "glyphicon glyphicon glyphicon-book"></span>  Lectures: </div> {{course.lectures.length}}<br>
-                                   <div class = "rowLabel"> <span class= "glyphicon glyphicon-thumbs-up"></span> Likes: 
-                                   </div> {{course.popularity}}
-                                </div>
-                                <div class = "col-xs-12 buttonRow" >
-                                    <button class = "btn btn-info" ng-click = "currentCourse(course)">  Find More
-                                    </button>
-                                </div>
-                        </div>
-                      </div>
                     </div>
+
+
                     <!-- This div represents a specific recommended courses. -->
                     <div id = "currentCourse" class = "panel panel-info row hideCourseAnimation" ng-show = "hideCourse" ng-cloak>
                       <div class = "panel-heading col-xs-12 text-center" id = "titleCourse">
@@ -223,14 +228,12 @@
                           </div>
                         </div>
                         <div class = "col-xs-12" id = "topicsCourse"> 
-                           <div id = "courseCoverageLabel"> Course Coverage </div> 
+                           <div id = "courseCoverageLabel"> Course Summary </div> 
                            <div class="list-group">
                               <a class="list-group-item list-group-item-info" ng-repeat = "lecture in currentCourse.lectures">
                                   <b>Lecture {{$index+1}}:</b> {{lecture}}  
                               </a>
-                           </div>
-                          
-                      
+                           </div>                      
                         </div>    
                       </div>
                         <div class = "panel-footer">
@@ -340,6 +343,7 @@
                                     <a data-toggle="modal" data-target="#gridSystemModal">View All</a>
                                   </div>
                                 </div>
+
                                 <div class="badge f" data-toggle="modal" data-target="#gridSystemModal">
                                   <div class="numbertext">2 / 2</div>
                                   <img src="images/badges/DM.png" style="width:50%; height:50%; margin-bottom: 90px; margin-top: 90px">
@@ -360,7 +364,14 @@
                                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
                               </div>
-
+                              <br>
+                              <div style="text-align:center">
+                                2/12 Achievements Earned
+                              </div>
+                              <br>
+                              <div style="text-align:center">
+                                <a data-toggle="modal" data-target="#gridSystemModal">View All</a>
+                              </div>
                             </div>
                           </div>
                           <div class="col-xs-4">
