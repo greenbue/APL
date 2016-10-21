@@ -1,0 +1,39 @@
+#home_banner{
+    margin-top: 46px;
+    height: 600px;
+    /* width: 100%; */
+    position: relative;
+    background: url("home_banner.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+#bannerText{
+	
+}
+#bannerMainText{
+	padding-left: 30px;
+    padding-right: 90px;
+    	vertical-align: center;
+
+}
+#bannerSignIn{
+	vertical-align: center;
+}
+
+#info_section{
+	height: 800px;
+	padding-top: 60px;
+}
+
+#info_paragraphs{
+	margin-top: 60px;
+	padding-left: 90px;
+    padding-right: 90px;
+    font-size: 16px;
+}
+
+.imageContainer{
+	height:200px;
+}
