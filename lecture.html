@@ -1,6 +1,6 @@
 <html>
 <head><!-- START Header -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://gc.kis.scr.kaspersky-labs.com/F22B46B8-5EFF-A14A-98D7-042425E05396/main.js" charset="UTF-8"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://use.fontawesome.com/3dc14e6085.js"></script>
   <meta charset="UTF-8">
   <!-- Latest compiled and minified CSS -->
@@ -70,7 +70,11 @@
             <div id="home" class="tab-pane fade in active"> <!-- START video pane -->
               <h3 id="lecture_video_title">lecture_video_title</h3>
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" id ="lecture_video" src="" frameborder="1" width="560" height="315"></iframe>
+                <iframe class="embed-responsive-item" id ="lecture_video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="1" width="560" height="315"></iframe>
+                <!--<video id="lecture_video" width="560" height="315" controls>
+                  <source src="video/blank.mp4" type="video/mp4">
+                  Your browser does not support the video tag. :(
+                </video>-->
               </div>
             </div> <!-- END video pane -->
             <div id="menu1" class="tab-pane fade embed"> <!-- START reading pane -->
@@ -79,8 +83,19 @@
               <div id="lecture_reading_content"></div>
             </div> <!-- END reading pane -->
             <div id="question_pane" class="tab-pane fade">
-            <h3 id="lecture_questions_title">Questions</h3>
+              <h3 id="lecture_questions_title">Questions</h3>
               <!-- Questions added by loadQuestion method -->
+              <div id="lecture_submit" class="text-center button-spacing" onClick="submitAnswers()">
+                <a class="btn btn-primary">
+                Submit Answers
+                <i class="fa fa-book" aria-hidden="true"></i></a>
+              </div>
+              <div id="lecture_next" class="text-center button-spacing hidden" onClick="nextLecture()">
+                <a class="btn btn-info">
+                Next Lecture
+                <i class="fa fa-book" aria-hidden="true"></i></a>
+              </div>
+              
             </div>
           </div> <!-- END tabs -->
         </div> <!-- END lecture body -->
