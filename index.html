@@ -82,44 +82,77 @@
 
                 <!-- Modal content-->
                 <div class="modal-content">
-                  <div class="modal-header">
+                  <div class="modal-header btn-success text-center">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h2 class="modal-title">John's Achievements</h2>
                   </div>
                   <div class="modal-body">
-                    <table class="table table-striped" id="tblGrid">
-                      <col
-                      <thead id="tblHead">
-                        <tr>
-                          <th>Description</th>
-                          <th></th>
-                          <th>Earned:</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td align="center" style="vertical-align:middle">Completed the "Basic Algebra Course"!</td>
-                          <td align="center"><img src="images/achievements/algebra.gif" style="width:45%"></td>
-                          <td align="center" style="vertical-align:middle">22/10/2016</td>
-                          
-                        </tr>
-                        <tr>
-                          <td align="center" style="vertical-align:middle">Studied for 2 days in a row!</td>
-                          <td align="center"><img src="images/achievements/studying2.jpg" style="width:45%"></td>
-                          <td align="center" style="vertical-align:middle">14/10/2016</td>
-                        </tr>
-                        <tr>
-                          <td align="center" style="vertical-align:middle">Completed 5 courses!</td>
-                          <td align="center"><img src="images/achievements/5.jpg" style="width:45%"></td>
-                          <td align="center" style="vertical-align:middle">30/06/2016</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  
-                                  <!-- <div class="text">Medal of Honor</div> -->
-                    <h3></h3>
-                    <h3></h3>
-                    <h3></h3>
+                    <div class="tabbable"> <!-- Only required for left/right tabs -->
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab" style="font-size: 18px;">Overall</a></li>
+                        <li><a href="#tab2" data-toggle="tab" style="font-size: 18px;">Course Related</a></li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                          <table class="table table-striped" id="tblGrid">
+                            <col
+                            <thead id="tblHead">
+                              <tr>
+                                <th>Description</th>
+                                <th></th>
+                                <th>Earned:</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td align="center" style="vertical-align:middle">Completed the "Basic Algebra Course"!</td>
+                                <td align="center"><img src="images/achievements/algebra.gif" style="width:45%"></td>
+                                <td align="center" style="vertical-align:middle">22/10/2016</td>
+                                
+                              </tr>
+                              <tr>
+                                <td align="center" style="vertical-align:middle">Studied for 2 days in a row!</td>
+                                <td align="center"><img src="images/achievements/studying2.jpg" style="width:45%"></td>
+                                <td align="center" style="vertical-align:middle">14/10/2016</td>
+                              </tr>
+                              <tr>
+                                <td align="center" style="vertical-align:middle">Completed 5 courses!</td>
+                                <td align="center"><img src="images/achievements/5.jpg" style="width:45%"></td>
+                                <td align="center" style="vertical-align:middle">30/06/2016</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                          <table class="table table-striped" id="tblGrid">
+                            <col
+                            <thead id="tblHead">
+                              <tr>
+                                <th>Description</th>
+                                <th></th>
+                                <th>Earned:</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td align="center" style="vertical-align:middle">MATH141 - Medal of Honor</td>
+                                <td align="center"><img src="images/badges/MoH.png" style="width:45%"></td>
+                                <td align="center" style="vertical-align:middle">22/05/2016</td>
+                                
+                              </tr>
+                              <tr>
+                                <td align="center" style="vertical-align:middle">MATH141 - Defence Medal</td>
+                                <td align="center"><img src="images/badges/DM.png" style="width:45%"></td>
+                                <td align="center" style="vertical-align:middle">10/04/2016</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    
+                    <!-- <div class="text">Medal of Honor</div> -->
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
